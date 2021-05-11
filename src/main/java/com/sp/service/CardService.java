@@ -1,11 +1,28 @@
 package com.sp.service;
 
+import com.sp.repository.CardRepository;
+
 public class CardService {
-    public Integer sellCard(Integer idCard) {
-        return 1;
+    private CardRepository cardRepository;
+    public CardService(){
+        cardRepository = new CardRepository();
     }
 
-    public Integer buyCard(Integer idCard) {
-        return 1;
+    public boolean sellCard(Integer idCard, Integer idUser) {
+        if (cardRepository.deleteUserIdFromCard(idCard)){
+            Integer price = cardRepository.getPrice(idCard);
+            return cardRepository.addCash(idUser, price);
+
+        }
+        return false;
+
+    }
+
+    public boolean buyCard(Integer idCard, Integer idUser) {
+        Integer price = cardRepository.getPrice(idCard);
+        if(cardRepository.removeCash(idUser, price)){
+            return cardRepository.addUserIdFromCard(idCard);
+        }
+        return false;
     }
 }
