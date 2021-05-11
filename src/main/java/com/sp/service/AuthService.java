@@ -8,7 +8,6 @@ package com.sp.service;
   	int i;
   	
       public String signup(String json) {
-    	 String u = com.sp.service.UserService.getHero();
         
     	 return this.jtoken;
       }

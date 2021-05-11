@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sp.model.User;
+import com.sp.model.UserEntity;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,7 +21,7 @@ public class UserController {
 		return id;
 	}
 	
-	void saveUser (User u) {
+	void saveUser (UserEntity u) {
 		int ret = getUser(u.getId());
 		if  (ret == 0) {
 			//TODO
