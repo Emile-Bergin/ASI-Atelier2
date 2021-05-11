@@ -1,5 +1,6 @@
 package com.sp.service;
 
+import com.sp.model.UserTransaction;
 import com.sp.repository.CardRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,18 +11,18 @@ public class CardService {
         cardRepository = new CardRepository();
     }
 
-    public boolean sellCard(Integer idCard, Integer idUser) {
-        if (cardRepository.deleteUserIdFromCard(idCard)){
-            Integer price = cardRepository.getPrice(idCard);
-            return cardRepository.addCash(idUser, price);
+    public boolean sellCard(UserTransaction transaction) {
+        if (cardRepository.deleteUserIdFromCard(transaction.getIdCard())){
+            Integer price = cardRepository.getPrice(transaction.getIdCard());
+            return cardRepository.addCash(transaction.getIdUser(), price);
         }
         return false;
     }
 
-    public boolean buyCard(Integer idCard, Integer idUser) {
-        Integer price = cardRepository.getPrice(idCard);
-        if(cardRepository.removeCash(idUser, price)){
-            return cardRepository.addUserIdFromCard(idCard);
+    public boolean buyCard(UserTransaction transaction) {
+        Integer price = cardRepository.getPrice(transaction.getIdCard());
+        if(cardRepository.removeCash(transaction.getIdUser(), price)){
+            return cardRepository.addUserIdToCard(transaction.getIdUser());
         }
         return false;
     }

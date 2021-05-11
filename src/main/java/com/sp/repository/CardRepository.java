@@ -5,6 +5,10 @@ public class CardRepository {
         return true;
     }
 
+    public boolean addUserIdToCard(Integer idCard) {
+        return true;
+    }
+
     public boolean removeCash(Integer IdUser, Integer cash){
         return true;
     }
@@ -17,7 +21,5 @@ public class CardRepository {
         return 1;
     }
 
-    public boolean addUserIdFromCard(Integer idCard) {
-        return true;
-    }
+    
 }
