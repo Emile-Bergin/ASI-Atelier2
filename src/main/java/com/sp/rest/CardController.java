@@ -1,5 +1,6 @@
 package com.sp.rest;
 
+import com.sp.model.UserTransaction;
 import com.sp.service.CardService;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +14,14 @@ public class CardController {
     }
 
     @PostMapping("/sell")
-    Integer sellCard(@RequestBody Integer idCard) {
-        return cardService.sellCard(idCard);
+    Boolean sellCard(@RequestBody UserTransaction transaction) {
+        System.out.println(transaction.toString());
+        return cardService.sellCard(transaction);
     }
 
     @PostMapping("/buy")
-    Integer buyCard(@RequestBody Integer idCard) {
-        return cardService.buyCard(idCard);
+    Boolean buyCard(@RequestBody UserTransaction transaction) {
+        System.out.println(transaction.toString());
+        return cardService.buyCard(transaction);
     }
 }
