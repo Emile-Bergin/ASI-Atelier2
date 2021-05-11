@@ -13,7 +13,7 @@ public class AuthController {
 	
 	@RequestMapping("/api/auth/login")
 	public String sayHello1() {
-		return "hello login";
+		return "<h1>hello login</h1>";
 	}
 	
 	@RequestMapping("/api/auth/logout")
