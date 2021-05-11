@@ -1,7 +1,9 @@
 package com.sp.service;
 
 import com.sp.repository.CardRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CardService {
     private CardRepository cardRepository;
     public CardService(){
