@@ -8,18 +8,20 @@ package com.sp.service;
   public class AuthService {
   	private String jtoken;
   	int id;
+
   	/*
-      public String signup(LoginDTO user) {
+>>>>>>> 284da22f75ad8b25d7b754eae38cb00be86da7ce
+      public String signup(String json) {
      	 String u = com.sp.service.UserService.SaveUser();
         
     	 return this.jtoken;
       }
       
-      public boolean login(LoginDTO user) {
-    	 if((UserRepository.findById(id).getUsername() == user.getUsername()) && UserRepository.findById(id).getPassword() == user.getUsername())
+      public boolean login(int id) {
+    	 if(UserRepository.findById(id) == true)
     		return true;
     	 else
-    		new UsernameNotFoundException("user not found");
+    		new UsernameNotFoundException("user not found by id:" + id));
     		return false;
       }
       
