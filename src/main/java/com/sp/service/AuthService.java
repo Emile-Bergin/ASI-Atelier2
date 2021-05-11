@@ -2,13 +2,15 @@ package com.sp.service;
   import org.springframework.stereotype.Service;
   import com.sp.service.UserService;
   
-  /*Test*/
+  
 
   @Service
   public class AuthService {
   	private String jtoken;
   	int id;
-  	
+
+  	/*
+>>>>>>> 284da22f75ad8b25d7b754eae38cb00be86da7ce
       public String signup(String json) {
      	 String u = com.sp.service.UserService.SaveUser();
         
@@ -25,6 +27,6 @@ package com.sp.service;
       
       public void logout(int id) {
     	  UserRepository.findById(id).getToken(user);
-      }
+      }*/
 
   }
