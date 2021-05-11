@@ -13,12 +13,12 @@ public class CardController {
     }
 
     @PostMapping("/sell")
-    Integer sellCard(@RequestBody Integer idCard) {
-        return cardService.sellCard(idCard);
+    Boolean sellCard(@RequestBody Integer idCard, Integer idUser) {
+        return cardService.sellCard(idCard, idUser);
     }
 
     @PostMapping("/buy")
-    Integer buyCard(@RequestBody Integer idCard) {
-        return cardService.buyCard(idCard);
+    Boolean buyCard(@RequestBody Integer idCard, Integer idUser) {
+        return cardService.buyCard(idCard, idUser);
     }
 }

@@ -14,10 +14,8 @@ public class CardService {
         if (cardRepository.deleteUserIdFromCard(idCard)){
             Integer price = cardRepository.getPrice(idCard);
             return cardRepository.addCash(idUser, price);
-
         }
         return false;
-
     }
 
     public boolean buyCard(Integer idCard, Integer idUser) {
