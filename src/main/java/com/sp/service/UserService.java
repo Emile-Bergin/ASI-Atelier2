@@ -1,18 +1,18 @@
 package com.sp.service;
 import org.springframework.stereotype.Service;
 
-import com.sp.model.User;
+import com.sp.model.UserEntity;
 
 @Service
 public class UserService {
     
-    public void SaveUser(User u) {
+    public void SaveUser(UserEntity u) {
         System.out.println(u);
-        //TODO création user
+        //TODO creation user
     }
     
-    public User getUser(int id) {
-        User u =new User(1, "Nom", "Surnom");
+    public UserEntity getUser(int id) {
+        UserEntity u =new UserEntity(1, "Nom", "Surnom",  "password");
         return u;
     }
 

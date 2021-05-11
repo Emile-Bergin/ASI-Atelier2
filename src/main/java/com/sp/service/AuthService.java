@@ -8,7 +8,9 @@ package com.sp.service;
   public class AuthService {
   	private String jtoken;
   	int id;
+
   	/*
+>>>>>>> 284da22f75ad8b25d7b754eae38cb00be86da7ce
       public String signup(String json) {
      	 String u = com.sp.service.UserService.SaveUser();
         
