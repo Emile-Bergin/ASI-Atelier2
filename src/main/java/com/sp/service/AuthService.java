@@ -5,21 +5,24 @@ package com.sp.service;
   @Service
   public class AuthService {
   	private String jtoken;
-  	int i;
+  	int id;
   	
-      public String signup(String json) {
-    	 String u = com.sp.service.UserService.getHero();
+      public string signup(String json) {
+     	 String u = com.sp.service.UserService.SaveUser();
         
     	 return this.jtoken;
       }
       
-      public String login(String json) {
-          
-         return this.jtoken;
+      public boolean login(int id) {
+    	 if(UserRepository.findById(id) == true)
+    		return true;
+    	 else
+    		new UsernameNotFoundException("user not found by id:" + id));
+    		return false;
       }
       
-      public void logout(String json) {
-    	 ;
+      public void logout(int id) {
+    	  UserRepository.findById(id).getToken(user);
       }
 
   }
