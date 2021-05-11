@@ -15,7 +15,7 @@ public class AuthController {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/api/auth/login")
 	public String login() {
-		return "<h1>hello login</h1>";
+		return "<h1>hello login2</h1>";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST , value = "/api/auth/logout")
