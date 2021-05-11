@@ -1,19 +1,32 @@
 package com.sp.model;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class UserEntity {
 	
-	private int id;
+	@Id
+	@GeneratedValue
+	private Integer id;
 	private String name;
 	private String surname;
+	private String password;
+<<<<<<< HEAD:src/main/java/com/sp/model/User.java
+	
 	public User() {
 	}
+=======
+	private Integer wallet;
+>>>>>>> 8b41227c468582e69fd5b987bb1585fe14e3899b:src/main/java/com/sp/model/UserEntity.java
 
-	public User(int id,String name, String surname) {
+	public UserEntity(int id,String name, String surname, String password) {
 		super();
 		this.id=id;
 		this.name = name;
 		this.surname = surname;
-		
+		this.password = password;
 		
 	}
 
