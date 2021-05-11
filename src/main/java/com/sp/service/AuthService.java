@@ -9,17 +9,17 @@ package com.sp.service;
   	private String jtoken;
   	int id;
   	/*
-      public String signup(String json) {
+      public String signup(LoginDTO user) {
      	 String u = com.sp.service.UserService.SaveUser();
         
     	 return this.jtoken;
       }
       
-      public boolean login(int id) {
-    	 if(UserRepository.findById(id) == true)
+      public boolean login(LoginDTO user) {
+    	 if((UserRepository.findById(id).getUsername() == user.getUsername()) && UserRepository.findById(id).getPassword() == user.getUsername())
     		return true;
     	 else
-    		new UsernameNotFoundException("user not found by id:" + id));
+    		new UsernameNotFoundException("user not found");
     		return false;
       }
       
