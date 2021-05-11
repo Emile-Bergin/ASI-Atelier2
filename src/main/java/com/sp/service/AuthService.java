@@ -10,18 +10,17 @@ package com.sp.service;
   	int id;
 
   	/*
->>>>>>> 284da22f75ad8b25d7b754eae38cb00be86da7ce
-      public String signup(String json) {
+       public String signup(LoginDTO user) {
      	 String u = com.sp.service.UserService.SaveUser();
         
     	 return this.jtoken;
       }
       
       public boolean login(int id) {
-    	 if(UserRepository.findById(id) == true)
+    	 i if((UserRepository.findById(id).getUsername() == user.getUsername()) && UserRepository.findById(id).getPassword() == user.getUsername())
     		return true;
     	 else
-    		new UsernameNotFoundException("user not found by id:" + id));
+    		new UsernameNotFoundException("user not found");
     		return false;
       }
       
