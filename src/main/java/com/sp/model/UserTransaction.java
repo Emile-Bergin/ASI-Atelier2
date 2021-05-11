@@ -3,6 +3,7 @@ package com.sp.model;
 public class UserTransaction {
     private Integer idUser;
     private Integer idCard;
+
     public UserTransaction(Integer idUser, Integer idCard){
         this.idUser = idUser;
         this.idCard = idCard;

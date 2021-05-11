@@ -1,8 +1,11 @@
 package com.sp.service;
 
+import com.sp.model.CardEntity;
 import com.sp.model.UserTransaction;
 import com.sp.repository.CardRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CardService {
@@ -25,5 +28,9 @@ public class CardService {
             return cardRepository.addUserIdToCard(transaction.getIdUser());
         }
         return false;
+    }
+
+    public List<CardEntity> getCards() {
+        return cardRepository.getCards();
     }
 }
