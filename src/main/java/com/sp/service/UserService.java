@@ -6,12 +6,13 @@ import com.sp.model.User;
 @Service
 public class UserService {
     
-    public void addHero(User u) {
+    public void SaveUser(User u) {
         System.out.println(u);
+        //TODO création user
     }
     
-    public User getHero(int id) {
-        User u =new User(1, "Nom", "Surnom", "Motdepasse");
+    public User getUser(int id) {
+        User u =new User(1, "Nom", "Surnom");
         return u;
     }
 
