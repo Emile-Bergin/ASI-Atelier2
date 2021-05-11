@@ -17,8 +17,8 @@ public class AuthController {
 	}
 	/* public String signup(@RequestBody LoginDTO loginDTO) {
 		private AuthService service = new AuthService();
-		returnResult = service.signup(loginDTO);
-		return returnResult;
+		token = service.signup(loginDTO);
+		return token;
 	}*/
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/api/auth/login")
@@ -27,8 +27,8 @@ public class AuthController {
 	}
 	/* public String login(@RequestBody LoginDTO loginDTO) {
 		private AuthService service = new AuthService();
-		returnResult = service.login(loginDTO);
-		return returnResult;
+		token = service.login(loginDTO);
+		return token;
 	}*/
 	
 	@RequestMapping(method = RequestMethod.POST , value = "/api/auth/logout")
@@ -38,8 +38,8 @@ public class AuthController {
 	}
 	/* public String logout(@RequestBody LoginDTO loginDTO) {
 		private AuthService service = new AuthService();
-		returnResult = service.logout(loginDTO);
-		return returnResult;
+		logoutIsOk = service.logout(loginDTO);
+		return logoutIsOk;
 	}*/
 
 }
