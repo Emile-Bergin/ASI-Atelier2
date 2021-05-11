@@ -1,6 +1,7 @@
 package com.sp.service;
   import org.springframework.stereotype.Service;
   import com.sp.service.UserService;
+  import com.sp.dto.logindto;
   
   
 
@@ -8,23 +9,32 @@ package com.sp.service;
   public class AuthService {
   	private String jtoken;
   	int id;
+
   	/*
-      public String signup(String json) {
-     	 String u = com.sp.service.UserService.SaveUser();
-        
-    	 return this.jtoken;
+       public boolean signup(LoginDTO user) {
+     	 if(com.sp.service.UserService.SaveUser(user)==true){
+     	 	return true;
+     	 }
+     	 else{
+     	 	return false;
+     	 }	 
       }
       
-      public boolean login(int id) {
-    	 if(UserRepository.findById(id) == true)
+      public boolean login(LoginDTO user) {
+    	 if((UserRepository.findByUsername(user.getUsername()) == true && (UserRepository.findByUsername(user.getUsername()).getPassword() == user.getPassword()))
     		return true;
     	 else
-    		new UsernameNotFoundException("user not found by id:" + id));
+    		new UsernameNotFoundException("user not found");
     		return false;
       }
       
-      public void logout(int id) {
-    	  UserRepository.findById(id).getToken(user);
+      public boolean logout(loginDTO user) {
+    	  if((UserRepository.findByUsername(user.getUsername()).deleteToken(user))== true){
+    	  	return true;
+    	  }
+    	  else {
+    	  	return false;
+    	  }
       }*/
 
   }

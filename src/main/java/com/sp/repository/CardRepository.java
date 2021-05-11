@@ -13,14 +13,6 @@ public class CardRepository {
         return true;
     }
 
-    public boolean removeCash(Integer IdUser, Integer cash){
-        return true;
-    }
-
-    public boolean addCash(Integer idUser, Integer price) {
-        return true;
-    }
-
     public Integer getPrice(Integer idCard) {
         return 1;
     }
