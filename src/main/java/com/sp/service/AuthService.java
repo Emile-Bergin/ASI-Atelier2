@@ -1,16 +1,14 @@
 package com.sp.service;
   import org.springframework.stereotype.Service;
   import com.sp.service.UserService;
-  // import com.sp.dto.logindto;
-  
+  import com.sp.dto.LoginDO;  
   
 
   @Service
   public class AuthService {
-  	private String jtoken;
-  	int id;
+  int id;
 
-  	/*
+  	
        public boolean signup(LoginDTO user) {
      	 if(com.sp.service.UserService.SaveUser(user)==true){
      	 	return true;
@@ -20,6 +18,7 @@ package com.sp.service;
      	 }	 
       }
       
+       /*
       public boolean login(LoginDTO user) {
     	 if((UserRepository.findByUsername(user.getUsername()) == true && (UserRepository.findByUsername(user.getUsername()).getPassword() == user.getPassword()))
     		return true;
