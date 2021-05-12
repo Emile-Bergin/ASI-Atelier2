@@ -30,7 +30,7 @@ public class CardEntity {
 	private CardFamilyEntity family;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_user", nullable = false)
+	@JoinColumn(name = "id_user")
 	private UserEntity user;
 
 	public CardEntity() {
