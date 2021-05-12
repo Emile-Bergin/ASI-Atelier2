@@ -1,11 +1,8 @@
 package com.sp.repository;
 
-public class UserRepository {
-    public Integer getWallet(Integer userId){
-        return null;
-    }
+import com.sp.model.UserEntity;
+import org.springframework.data.repository.CrudRepository;
 
-    public boolean setWallet(Integer idUser, int i) {
-        return true;
-    }
+public interface UserRepository extends CrudRepository<UserEntity, Integer> {
+
 }

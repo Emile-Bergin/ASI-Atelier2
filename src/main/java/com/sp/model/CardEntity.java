@@ -36,6 +36,22 @@ public class CardEntity {
 	public CardEntity() {
 	}
 
+	public UserEntity getUser() {
+		return user;
+	}
+
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	/*@Override
 	public String toString() {
 		return "User ["+this.id+"]: name:"+this.name+", surname:"+this.surname;
