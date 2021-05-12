@@ -7,13 +7,17 @@ import com.sp.model.UserEntity;
 public class UserService {
     
     public void SaveUser(UserEntity u) {
-        System.out.println(u);
-        //TODO creation user
+
+        return userRepository.save(user);
     }
     
     public UserEntity getUser(int id) {
-        UserEntity u = new UserEntity(1, "Nom", "Surnom",  "password");
-        return u;
+        ptional<UserEntity> user = userRepository.findById(id);
+
+        if(user.isPresent()) {
+            return ResponseEntity.ok().body(user.get());
+        } else {
+            return ResponseEntity.notFound().build();
     }
 
 }
