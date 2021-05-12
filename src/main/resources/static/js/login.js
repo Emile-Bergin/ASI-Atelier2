@@ -3,9 +3,10 @@ $(document ).ready(function() {
         var data = {username: $("#username").val(), password: $("#password").val()};
         console.log(data);
         $.post({
-            url: "/login",
+            url: "api/auth/login",
             data: data,
             success: function(data, status, xhr){console.log(status)},
         });
     });
 });
+
