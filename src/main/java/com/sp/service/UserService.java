@@ -12,7 +12,7 @@ public class UserService {
     }
     
     public UserEntity getUser(int id) {
-        UserEntity u =new UserEntity(1, "Nom", "Surnom",  "password");
+        UserEntity u = new UserEntity(1, "Nom", "Surnom",  "password");
         return u;
     }
 
