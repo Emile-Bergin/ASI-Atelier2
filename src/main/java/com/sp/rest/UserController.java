@@ -14,21 +14,15 @@ import java.util.Optional;
 public class UserController {
 
 
-	@GetMapping("/api/user/{id}")
-	ResponseEntity<UserEntity> findUserById(@PathVariable(value = "id") long id) {
+	// @GetMapping("/api/user/{id}")
+	// ResponseEntity<UserEntity> findUserById(@PathVariable(value = "id") long id) {
 
-		/*Optional<UserEntity> user = userRepository.findById(id);
 
-		if(user.isPresent()) {
-			return ResponseEntity.ok().body(user.get());
-		} else {
-			return ResponseEntity.notFound().build();
-		}*/
-	}
+	// }
 
-	@PostMapping("/api/user/save")
-	public User saveUser(@Validated @RequestBody UserEntity user) {
-		return userRepository.save(user);
-	}
+	// @PostMapping("/api/user/save")
+	// public User saveUser(@Validated @RequestBody UserEntity user) {
+	// 	return userRepository.save(user);
+	// }
 
 }
