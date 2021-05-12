@@ -14,15 +14,15 @@ import java.util.Optional;
 public class UserController {
 
 
-	@GetMapping("/api/user/{id}")
-	/*ResponseEntity<UserEntity> findUserById(@PathVariable(value = "id") long id) {
+	// @GetMapping("/api/user/{id}")
+	// ResponseEntity<UserEntity> findUserById(@PathVariable(value = "id") long id) {
 
 
-	}*/
+	// }
 
-	@PostMapping("/api/user/save")
-	/* public User saveUser(@Validated @RequestBody UserEntity user) {
-		return userRepository.save(user);
-	}*/
+	// @PostMapping("/api/user/save")
+	// public User saveUser(@Validated @RequestBody UserEntity user) {
+	// 	return userRepository.save(user);
+	// }
 
 }

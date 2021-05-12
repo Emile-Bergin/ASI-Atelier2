@@ -9,7 +9,6 @@ public class CardEntity {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id private long id;
 
-
 	@Column(name="title")
 	private String title;
 
