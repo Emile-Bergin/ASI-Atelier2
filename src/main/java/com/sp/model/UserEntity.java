@@ -1,29 +1,47 @@
 package com.sp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
+import java.util.ArrayList;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "customer")
 public class UserEntity {
 	
-	@Id
-	@GeneratedValue
-	private Integer id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id private long id;
+
+	@Column(name="title")
 	private String name;
+
+	@Column(name="surname")
 	private String surname;
+
+	@Column(name="password")
 	private String password;
 
-	private Integer wallet;
+	@Column(name="token")
+	private String token;
 
+	@Column(name="wallet")
+	private int wallet;
 
-	public UserEntity(int id,String name, String surname, String password) {
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  	private List<CardEntity> card;
+
+	public UserEntity() {
+
+	}
+
+	public UserEntity(long id,String name, String surname, String password, String token, int wallet) {
 		super();
 		this.id=id;
 		this.name = name;
 		this.surname = surname;
 		this.password = password;
-		
+		this.token = token;
+		this.wallet = wallet;
 	}
 
 	public String getName() {
@@ -42,13 +60,11 @@ public class UserEntity {
 		this.surname = surname;
 	}
 
-
-	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
