@@ -10,3 +10,6 @@ public class SpAppCard {
 		SpringApplication.run(SpAppCard.class,args);
 	}
 }
+
+// Launch with creating data : mvn spring-boot:run '-Dspring.profiles.active=local'
+// Default launch : mvn spring-boot:run

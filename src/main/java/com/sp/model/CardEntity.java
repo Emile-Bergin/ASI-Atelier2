@@ -1,25 +1,55 @@
 package com.sp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "card")
 public class CardEntity {
 	
-	@Id
-	@GeneratedValue
-	private Integer id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id private long id;
+
+	@Column(name="title")
 	private String title;
+
+	@Column(name="description")
 	private String description;
-	private Integer health_point;
-    private Integer price;
-    private Integer id_type;
-    private Integer id_family;
-    private Integer id_user;
+
+	@Column(name="health_point")
+	private int health_point;
+
+	@Column(name="price")
+    private int price;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_type", nullable = false)
+	private CardTypeEntity type;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_family", nullable = false)
+	private CardFamilyEntity family;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_user")
+	private UserEntity user;
 
 	public CardEntity() {
-		super();
+	}
+
+	public UserEntity getUser() {
+		return user;
+	}
+
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 	/*@Override

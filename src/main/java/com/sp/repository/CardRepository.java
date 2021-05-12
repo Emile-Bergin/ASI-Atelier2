@@ -1,23 +1,16 @@
 package com.sp.repository;
 
 import com.sp.model.CardEntity;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public class CardRepository {
-    public boolean deleteUserIdFromCard(Integer idCard){
-        return true;
-    }
+public interface CardRepository extends CrudRepository<CardEntity, Integer> {
+    /*public boolean deleteUserIdFromCard(Integer idCard);
 
-    public boolean addUserIdToCard(Integer idCard) {
-        return true;
-    }
+    public boolean addUserIdToCard(Integer idCard);
 
-    public Integer getPrice(Integer idCard) {
-        return 1;
-    }
+    public Integer getPrice(Integer idCard);
 
-    public List<CardEntity> getCards() {
-        return null;
-    }
+    public List<CardEntity> getCards();*/
 }

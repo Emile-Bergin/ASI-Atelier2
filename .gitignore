@@ -11,3 +11,5 @@ local.properties
 .recommenders
 target/
 .project
+.idea
+src/main/resources/application.properties

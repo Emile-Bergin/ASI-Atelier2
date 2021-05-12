@@ -1,34 +1,28 @@
 package com.sp.rest;
 
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.catalina.User;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import com.sp.model.UserEntity;
 
-import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.Optional;
 
 @RestController
-
 public class UserController {
-	
 
 
-	@RequestMapping(method=RequestMethod.GET,value="/api/user/id")
-		int getUser(@PathVariable int id) {
-		
-		return id;
-	}
-	
-	void saveUser (UserEntity u) {
-		int ret = getUser(u.getId());
-		if  (ret == 0) {
-			//TODO
-		}
-		else {
-			//TODO
-		}
-	}
+	// @GetMapping("/api/user/{id}")
+	// ResponseEntity<UserEntity> findUserById(@PathVariable(value = "id") long id) {
+
+
+	// }
+
+	// @PostMapping("/api/user/save")
+	// public User saveUser(@Validated @RequestBody UserEntity user) {
+	// 	return userRepository.save(user);
+	// }
 
 }
