@@ -34,14 +34,31 @@ public class CardEntity {
 	private UserEntity user;
 
 	public CardEntity() {
+
 	}
 
-	public UserEntity getUser() {
-		return user;
+	public String getTitle() {
+		return this.title;
 	}
 
-	public void setUser(UserEntity user) {
-		this.user = user;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getHealthPoint() {
+		return this.health_point;
+	}
+
+	public void setHealthPoint(int health_point) {
+		this.health_point = health_point;
 	}
 
 	public int getPrice() {
@@ -52,10 +69,27 @@ public class CardEntity {
 		this.price = price;
 	}
 
-	/*@Override
-	public String toString() {
-		return "User ["+this.id+"]: name:"+this.name+", surname:"+this.surname;
-	}*/
+	public CardFamilyEntity getFamily() {
+		return this.family;
+	}
 
+	public void setFamily(CardFamilyEntity family) {
+		this.family = family;
+	}
 
+	public CardTypeEntity getType() {
+		return this.type;
+	}
+
+	public void setType(CardTypeEntity type) {
+		this.type = type;
+	}
+
+	public UserEntity getUser() {
+		return user;
+	}
+
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
 }

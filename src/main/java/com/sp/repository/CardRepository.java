@@ -13,4 +13,6 @@ public interface CardRepository extends CrudRepository<CardEntity, Integer> {
     public Integer getPrice(Integer idCard);
 
     public List<CardEntity> getCards();*/
+
+    public List<CardEntity> findAll();
 }

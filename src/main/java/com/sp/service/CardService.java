@@ -7,6 +7,9 @@ import com.sp.repository.CardRepository;
 import com.sp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,8 +18,8 @@ public class CardService {
     private CardRepository cardRepository;
     private UserRepository userRepository;
     public CardService(CardRepository cardRepository, UserRepository userRepository){
-        cardRepository = cardRepository;
-        userRepository = userRepository;
+        this.cardRepository = cardRepository;
+        this.userRepository = userRepository;
     }
 
     public boolean sellCard(UserTransaction transaction) {
@@ -42,9 +45,6 @@ public class CardService {
     }
 
     public List<CardEntity> getCards() {
-        /*
-        return cardRepository.getCards();
-        */
-        return null;
+        return cardRepository.findAll();
     }
 }

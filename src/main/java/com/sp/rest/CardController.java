@@ -12,8 +12,13 @@ import java.util.List;
 public class CardController {
 
     private CardService cardService;
-    public CardController(){
-        cardService = new CardService();
+    public CardController(CardService cardService){
+        this.cardService = cardService;
+    }
+
+    @GetMapping("/list")
+    List<CardEntity> getCards(){
+        return cardService.getCards();
     }
 
     @PostMapping("/sell")
@@ -26,10 +31,5 @@ public class CardController {
     Boolean buyCard(@RequestBody UserTransaction transaction) {
         System.out.println(transaction.toString());
         return cardService.buyCard(transaction);
-    }
-
-    @GetMapping("/cards")
-    List<CardEntity> getCards(){
-        return cardService.getCards();
     }
 }
