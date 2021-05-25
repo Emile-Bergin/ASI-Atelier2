@@ -16,6 +16,11 @@ public class CardController {
         this.cardService = cardService;
     }
 
+    @GetMapping("/list")
+    List<CardEntity> getCards(){
+        return cardService.getCards();
+    }
+
     @PostMapping("/sell")
     Boolean sellCard(@RequestBody UserTransaction transaction) {
         System.out.println(transaction.toString());
@@ -26,10 +31,5 @@ public class CardController {
     Boolean buyCard(@RequestBody UserTransaction transaction) {
         System.out.println(transaction.toString());
         return cardService.buyCard(transaction);
-    }
-
-    @GetMapping("/cards")
-    List<CardEntity> getCards(){
-        return cardService.getCards();
     }
 }
