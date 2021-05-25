@@ -24,7 +24,7 @@ public class CardController {
 
     @GetMapping("/list/sell") 
     List<CardEntity> getSellCards() {
-        return cardService.getUserCards(null);
+        return cardService.getSellCards();
     }
 
     @GetMapping("/list/{idUser}")
