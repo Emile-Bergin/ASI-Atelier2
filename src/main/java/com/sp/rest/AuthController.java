@@ -18,16 +18,7 @@ public class AuthController {
 		this.authService = authService;
 	}
 
-<<<<<<< HEAD
-	@RequestMapping(value="/api/auth/signup", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public String signup(LoginDTO loginDTO) {
-=======
 	@RequestMapping("/api/auth/signup")
-	/*public String signup() {
->>>>>>> 3177b19c89b25fb6cb50adbb51ee4c49fdf510d3
-		
-		return "hello signup";
-	}*/
 	 public UserEntity signup(@RequestBody UserEntity userEntity) {
 		return this.authService.signup(userEntity);
 	}
