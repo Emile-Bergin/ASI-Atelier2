@@ -26,15 +26,9 @@ public class AuthController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/api/auth/login")
-	public String login(@RequestBody LoginDTO loginDTO) {
-		/*return loginDTO.getUsername();*/
-		return "test";
+	public UserEntity login(@RequestBody LoginDTO loginDTO) {
+		return authService.login(loginDTO);
 	}
-	/*public String login(@RequestBody LoginDTO loginDTO) {
-		private AuthService service = new AuthService();
-		token = service.login(loginDTO);
-		return token;
-	}*/
 	
 	@RequestMapping(method = RequestMethod.POST , value = "/api/auth/logout")
 	public String logout() {
