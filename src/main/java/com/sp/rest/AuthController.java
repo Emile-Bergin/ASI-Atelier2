@@ -18,13 +18,15 @@ public class AuthController {
 		this.authService = authService;
 	}
 
-	@RequestMapping("/api/auth/signup")
-	 public UserEntity signup(@RequestBody UserEntity userEntity) {
+	@RequestMapping(method = RequestMethod.POST, value ="/api/auth/signup",
+			consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	 public UserEntity signup( UserEntity userEntity) {
 		return this.authService.signup(userEntity);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/api/auth/login")
-	public UserEntity login(@RequestBody LoginDTO loginDTO) {
+	@RequestMapping(method = RequestMethod.POST, value = "/api/auth/login",
+			consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public UserEntity login( LoginDTO loginDTO) {
 		return authService.login(loginDTO);
 	}
 	
@@ -33,10 +35,5 @@ public class AuthController {
 		
 		return "hello logout";
 	}
-	/* public String logout(@RequestBody LoginDTO loginDTO) {
-		private AuthService service = new AuthService();
-		logoutIsOk = service.logout(loginDTO);
-		return logoutIsOk;
-	}*/
 
 }
