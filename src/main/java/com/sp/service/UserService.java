@@ -1,15 +1,14 @@
 package com.sp.service;
-import com.sp.dto.LoginDTO;
-import org.springframework.stereotype.Service;
 
+import com.sp.dto.LoginDTO;
 import com.sp.model.UserEntity;
 import com.sp.repository.UserRepository;
-
-import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
     private UserRepository userRepository;
+
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -19,13 +18,13 @@ public class UserService {
 
     }
 
-    public UserEntity login(LoginDTO loginDTO){
-        return userRepository.findByPasswordAndSurname(loginDTO.getPassword(),loginDTO.getUsername())
+    public UserEntity login(LoginDTO loginDTO) {
+        return userRepository.findByPasswordAndSurname(loginDTO.getPassword(), loginDTO.getUsername())
                 .orElseThrow(() -> new RuntimeException("Pas de user"));
     }
 
     public UserEntity getUser(int id) {
-       return userRepository.findById(id)
+        return userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User inexistant"));
     }
 

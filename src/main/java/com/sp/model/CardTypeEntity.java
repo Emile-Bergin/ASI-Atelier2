@@ -1,44 +1,43 @@
 package com.sp.model;
 
 import javax.persistence.*;
-
 import java.util.List;
-import java.util.ArrayList;
 
 @Entity
 @Table(name = "card_type")
 public class CardTypeEntity {
-	
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Id private long id;
 
-	@Column(name="name")
-	private String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private long id;
 
-	@Column(name="code")
-	private String code;
+    @Column(name = "name")
+    private String name;
 
-	@OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
-  	private List<CardEntity> card;
+    @Column(name = "code")
+    private String code;
 
-	public CardTypeEntity() {
-	}
+    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
+    private List<CardEntity> card;
 
-	public String getName() {
-		return this.name;
-	}
+    public CardTypeEntity() {
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public String getCode() {
-		return this.code;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
 	/*@Override
 	public String toString() {

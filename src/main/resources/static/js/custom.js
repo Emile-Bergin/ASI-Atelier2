@@ -1,3 +1,3 @@
 $('.ui.dropdown')
-  .dropdown()
+    .dropdown()
 ;

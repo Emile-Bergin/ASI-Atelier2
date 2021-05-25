@@ -1,28 +1,27 @@
 package com.sp.service;
-import com.sp.model.UserEntity;
-import com.sp.repository.UserRepository;
-import org.apache.catalina.User;
-import org.springframework.stereotype.Service;
-//import com.sp.repository.UserRepository;
-import com.sp.dto.*;
 
-  
+import com.sp.dto.LoginDTO;
+import com.sp.model.UserEntity;
+import org.springframework.stereotype.Service;
+
 
 @Service
 public class AuthService {
-	private UserService userService;
-	public AuthService(UserService userService) {
-		this.userService = userService;
-	}
+    private UserService userService;
 
-	int id;
-	public UserEntity signup(UserEntity user) {
-		return userService.SaveUser(user);
-	}
+    public AuthService(UserService userService) {
+        this.userService = userService;
+    }
 
-	public UserEntity login(LoginDTO loginDTO) {
-		return userService.login(loginDTO);
-	}
+    int id;
+
+    public UserEntity signup(UserEntity user) {
+        return userService.SaveUser(user);
+    }
+
+    public UserEntity login(LoginDTO loginDTO) {
+        return userService.login(loginDTO);
+    }
 
 
 // 	public boolean login(LoginDTO user) {
@@ -32,7 +31,7 @@ public class AuthService {
 // 		new UsernameNotFoundException("user not found");
 // 		return false;
 // 	}
-  
+
 //   public boolean logout(loginDTO user) {
 // 	  if((UserRepository.findByUsername(user.getUsername()).deleteToken(user))== true){
 // 	  	return true;

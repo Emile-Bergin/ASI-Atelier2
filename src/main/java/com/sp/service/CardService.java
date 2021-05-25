@@ -7,17 +7,14 @@ import com.sp.repository.CardRepository;
 import com.sp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CardService {
     private CardRepository cardRepository;
     private UserRepository userRepository;
-    public CardService(CardRepository cardRepository, UserRepository userRepository){
+
+    public CardService(CardRepository cardRepository, UserRepository userRepository) {
         this.cardRepository = cardRepository;
         this.userRepository = userRepository;
     }
@@ -30,7 +27,7 @@ public class CardService {
         Integer price = card.getPrice();
         UserEntity user = userRepository.findById(transaction.getIdUser())
                 .orElseThrow(() -> new RuntimeException("L'user recherche n existe pas"));
-        user.setWallet(user.getWallet()+price);
+        user.setWallet(user.getWallet() + price);
         userRepository.save(user);
         return true;
     }

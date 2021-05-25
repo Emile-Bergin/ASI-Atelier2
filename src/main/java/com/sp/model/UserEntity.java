@@ -1,100 +1,99 @@
 package com.sp.model;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
 public class UserEntity {
-	
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Id private long id;
 
-	@Column(name="name")
-	private String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private long id;
 
-	@Column(name="surname")
-	private String surname;
+    @Column(name = "name")
+    private String name;
 
-	@Column(name="password")
-	private String password;
+    @Column(name = "surname")
+    private String surname;
 
-	@Column(name="token")
-	private String token;
+    @Column(name = "password")
+    private String password;
 
-	@Column(name="wallet")
-	private int wallet;
+    @Column(name = "token")
+    private String token;
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-  	private List<CardEntity> card;
+    @Column(name = "wallet")
+    private int wallet;
 
-	public UserEntity() {
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<CardEntity> card;
 
-	}
+    public UserEntity() {
 
-	public UserEntity(long id,String name, String surname, String password, String token, int wallet) {
-		super();
-		this.id=id;
-		this.name = name;
-		this.surname = surname;
-		this.password = password;
-		this.token = token;
-		this.wallet = wallet;
-	}
+    }
 
-	public String getName() {
-		return name;
-	}
+    public UserEntity(long id, String name, String surname, String password, String token, int wallet) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.password = password;
+        this.token = token;
+        this.wallet = wallet;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getsurname() {
-		return surname;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setsurname(String surname) {
-		this.surname = surname;
-	}
+    public String getsurname() {
+        return surname;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public void setsurname(String surname) {
+        this.surname = surname;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public int getWallet() {
-		return wallet;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setWallet(int wallet) {
-		this.wallet = wallet;
-	}
+    public int getWallet() {
+        return wallet;
+    }
 
-	@Override
-	public String toString() {
-		return "User ["+this.id+"]: name:"+this.name+", surname:"+this.surname;
-	}
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
+    }
+
+    @Override
+    public String toString() {
+        return "User [" + this.id + "]: name:" + this.name + ", surname:" + this.surname;
+    }
 
 
-	public String getPassword() {
-		return password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public String getToken() {
-		return token;
-	}
+    public String getToken() {
+        return token;
+    }
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public void setToken(String token) {
+        this.token = token;
+    }
 }
