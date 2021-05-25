@@ -46,6 +46,7 @@ public class CardService {
     }
 
     public List<CardEntity> getUserCards(Integer idUser) {
+    	
         return cardRepository.findAllById(idUser);
     }
 }
