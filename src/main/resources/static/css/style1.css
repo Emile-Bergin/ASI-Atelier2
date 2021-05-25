@@ -1,20 +1,23 @@
-body{
+body {
     background: #888a85;
 }
-#container{
-    width:400px;
-    margin:0 auto;
-    margin-top:10%;
+
+#container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 10%;
 }
+
 /* Bordered form */
 form {
-    width:100%;
+    width: 100%;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-#container h1{
+
+#container h1 {
     width: 38%;
     margin: 0 auto;
     padding-bottom: 10px;
@@ -40,6 +43,7 @@ input[type=submit] {
     cursor: pointer;
     width: 100%;
 }
+
 input[type=submit]:hover {
     background-color: white;
     color: #2e3436;

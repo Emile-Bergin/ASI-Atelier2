@@ -12,12 +12,13 @@ import java.util.List;
 public class CardController {
 
     private CardService cardService;
-    public CardController(CardService cardService){
+
+    public CardController(CardService cardService) {
         this.cardService = cardService;
     }
 
     @GetMapping("/list")
-    List<CardEntity> getCards(){
+    List<CardEntity> getCards() {
         return cardService.getCards();
     }
 

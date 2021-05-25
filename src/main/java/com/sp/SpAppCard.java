@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpAppCard {
-	
-	public static void main(String[] args) {
-		SpringApplication.run(SpAppCard.class,args);
-	}
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpAppCard.class, args);
+    }
 }
 
 // Launch with creating data : mvn spring-boot:run '-Dspring.profiles.active=local'
