@@ -44,4 +44,8 @@ public class CardService {
     public List<CardEntity> getCards() {
         return cardRepository.findAll();
     }
+
+    public List<CardEntity> getUserCards(Integer idUser) {
+        return cardRepository.findAllById(idUser);
+    }
 }
