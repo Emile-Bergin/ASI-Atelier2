@@ -12,8 +12,8 @@ import java.util.List;
 public class CardController {
 
     private CardService cardService;
-    public CardController(){
-        cardService = new CardService();
+    public CardController(CardService cardService){
+        this.cardService = cardService;
     }
 
     @PostMapping("/sell")

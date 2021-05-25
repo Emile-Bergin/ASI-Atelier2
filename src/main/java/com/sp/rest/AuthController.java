@@ -2,6 +2,8 @@ package com.sp.rest;
 
 import com.sp.dto.LoginDTO;
 import com.sp.service.AuthService;
+
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RestController
 public class AuthController {
 
-	@RequestMapping("/api/auth/signup")
-	public String signup() {
+	@RequestMapping(value="/api/auth/signup", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public String signup(LoginDTO loginDTO) {
 		
 		return "hello signup";
 	}
