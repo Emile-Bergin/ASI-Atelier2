@@ -23,17 +23,10 @@ public class UserService {
         return userRepository.findByPasswordAndSurname(loginDTO.getPassword(),loginDTO.getUsername())
                 .orElseThrow(() -> new RuntimeException("Pas de user"));
     }
-    
+
     public UserEntity getUser(int id) {
-        // ptional<UserEntity> user = userRepository.findById(id);
-
-        // if(user.isPresent()) {
-        //     return ResponseEntity.ok().body(user.get());
-        // } else {
-        //     return ResponseEntity.notFound().build();
-        // }
-
-        return null;
+       return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User inexistant"));
     }
 
 }
