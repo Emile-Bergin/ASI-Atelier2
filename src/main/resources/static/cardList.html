@@ -44,13 +44,11 @@
                 <table class="ui fixed selectable single line celled table" id="cardListId">
                     <thead>
                         <tr>
-                            <th class="three wide">Name</th>
+                            <th class="three wide">Title</th>
                             <th class="three wide">Description</th>
                             <th>Family</th>
+                            <th>Type</th>
                             <th>HP</th>
-                            <th>Energy</th>
-                            <th>Defence</th>
-                            <th>Attack</th>
                             <th>Price</th>
                             <th></th>
                         </tr>
@@ -58,15 +56,11 @@
                     <tbody id="tableContent">
                         <template id="row">
                             <tr>
-                                <td>
-                                    <img  class="ui avatar image" src={{img_src}}> <span>{{name}} </span>
-                                </td>
-                                <td >{{description}}</td>
+                                <td>{{title}}</td>
+                                <td>{{description}}</td>
                                 <td>{{family_name}}</td>
-                                <td>{{hp}}</td>
-                                <td>{{energy}}</td>
-                                <td>{{defense}}</td>
-                                <td>{{attack}}</td>
+                                <td>{{type_name}}</td>
+                                <td>{{health_point}}</td>
                                 <td>{{price}}$</td>
                                 <td>
                                     <div class="ui vertical animated button" tabindex="0">
