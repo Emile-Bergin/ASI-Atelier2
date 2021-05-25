@@ -6,10 +6,14 @@ import com.sp.repository.UserRepository;
 
 @Service
 public class UserService {
-    
-    public void SaveUser(UserEntity u) {
+    private UserRepository userRepository;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
-        // return UserRepository.save(user);
+    public UserEntity SaveUser(UserEntity u) {
+        return userRepository.saveAndFlush(u);
+
     }
     
     public UserEntity getUser(int id) {

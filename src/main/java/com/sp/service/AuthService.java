@@ -1,20 +1,22 @@
 package com.sp.service;
+import com.sp.model.UserEntity;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
-import com.sp.service.UserService;
 //import com.sp.repository.UserRepository;
-import com.sp.dto.LoginDTO;  
+import com.sp.dto.*;
+
   
 
 @Service
 public class AuthService {
+	private UserService userService;
+	public AuthService(UserService userService) {
+		this.userService = userService;
+	}
+
 	int id;
-	public boolean signup(LoginDTO user) {
-		// if(UserService.SaveUser(user)==true){
-		// 	return true;
-		// } else {
-		// 	return false;
-		// }	 
-		return false;
+	public UserEntity signup(UserEntity user) {
+		return userService.SaveUser(user);
 	}
       
 
