@@ -18,13 +18,13 @@ public class CardController {
     }
 
     @GetMapping("/list")
-    List<CardEntity> getCards() {
+    List<CardEntity> getCards(@CookieValue("session") String cookie) {
         return cardService.getCards();
     }
 
     @GetMapping("/list/sell") 
     List<CardEntity> getSellCards() {
-        return cardService.getUserCards(null);
+        return cardService.getSellCards();
     }
 
     @GetMapping("/list/{idUser}")

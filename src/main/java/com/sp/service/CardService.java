@@ -45,8 +45,11 @@ public class CardService {
         return cardRepository.findAll();
     }
 
+    public List<CardEntity> getSellCards() {
+        return cardRepository.findAllByUserNull();
+    }
+
     public List<CardEntity> getUserCards(Integer idUser) {
-    	
-        return cardRepository.findAllById(idUser);
+        return cardRepository.findAllByUser(idUser);
     }
 }

@@ -12,7 +12,7 @@ function getCardList() {
         cache: 'default'
     };
 
-    fetch('http://localhost:8080/api/card/list', myInit)
+    fetch('http://localhost:8080/api/card/list/1', myInit)
         .then(function (response) {
             response.json().then(el => {
                 console.log(el);
