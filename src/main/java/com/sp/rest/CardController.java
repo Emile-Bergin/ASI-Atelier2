@@ -18,7 +18,7 @@ public class CardController {
     }
 
     @GetMapping("/list")
-    List<CardEntity> getCards() {
+    List<CardEntity> getCards(@CookieValue("session") String cookie) {
         return cardService.getCards();
     }
 

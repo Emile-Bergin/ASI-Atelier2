@@ -1,8 +1,11 @@
 package com.sp.service;
 
 import com.sp.dto.LoginDTO;
+import com.sp.model.CardEntity;
 import com.sp.model.UserEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -22,7 +25,6 @@ public class AuthService {
     public UserEntity login(LoginDTO loginDTO) {
         return userService.login(loginDTO);
     }
-
 
 // 	public boolean login(LoginDTO user) {
 // 		if((UserRepository.findByUsername(user.getUsername()) == true && (UserRepository.findByUsername(user.getUsername()).getPassword() == user.getPassword()))
