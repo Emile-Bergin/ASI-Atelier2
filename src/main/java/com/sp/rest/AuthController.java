@@ -49,17 +49,17 @@ public class AuthController {
     @RequestMapping(method = RequestMethod.GET, value = "/api/auth/logout")
     public ResponseEntity<?> logout(HttpServletResponse response) {
         try {
-            /*Cookie cookie = new Cookie("session", null);
+            Cookie cookie = new Cookie("session", null);
             cookie.setMaxAge(0);
             cookie.setSecure(true);
             cookie.setHttpOnly(true);
             cookie.setPath("/");
-            response.addCookie(cookie);*/
+            response.addCookie(cookie);
+
 
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
         return ResponseEntity.ok().build();
     }
-
 }
