@@ -1,10 +1,10 @@
 package com.sp.model;
 
 public class UserTransaction {
-    private Integer idUser;
+    private Long idUser;
     private Integer idCard;
 
-    public UserTransaction(Integer idUser, Integer idCard) {
+    public UserTransaction(Long idUser, Integer idCard) {
         this.idUser = idUser;
         this.idCard = idCard;
     }
@@ -17,7 +17,7 @@ public class UserTransaction {
                 '}';
     }
 
-    public Integer getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 

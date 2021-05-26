@@ -34,6 +34,7 @@ public class AuthController {
         try {
             UserEntity result = authService.login(loginDTO);
             Long username = result.getId();
+            System.out.println(username);
             Cookie cookie = new Cookie("session", username.toString());
             cookie.setMaxAge(7 * 24 * 360);
             cookie.setSecure(true);

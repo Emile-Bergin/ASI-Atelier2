@@ -23,7 +23,7 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("Pas de user"));
     }
 
-    public UserEntity getUser(int id) {
+    public UserEntity getUser(long id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User inexistant"));
     }
