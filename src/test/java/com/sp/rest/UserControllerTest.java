@@ -20,7 +20,7 @@ public class UserControllerTest {
     private MockMvc mockMvc;
 
     static {
-        System.setProperty("spring.config.location", "classpath:application-local.properties");
+        System.setProperty("spring.config.location", "classpath:application.properties");
     }
 
     @Test
@@ -33,7 +33,7 @@ public class UserControllerTest {
     @Test
     void getUserTest() throws Exception {
         mockMvc.perform(
-                get("/api/user/1")
+                get("/api/user/3")
         ).andExpect(status().isOk());
     }
 }

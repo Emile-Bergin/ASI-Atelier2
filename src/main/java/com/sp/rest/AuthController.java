@@ -34,7 +34,6 @@ public class AuthController {
         try {
             UserEntity result = authService.login(loginDTO);
             Long username = result.getId();
-            System.out.println(username);
             Cookie cookie = new Cookie("session", username.toString());
             cookie.setMaxAge(7 * 24 * 360);
             cookie.setSecure(true);
@@ -57,10 +56,10 @@ public class AuthController {
             cookie.setPath("/");
             response.addCookie(cookie);
 
+
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
         return ResponseEntity.ok().build();
     }
-
 }
