@@ -11,11 +11,14 @@ function getUserData() {
     };
 
     fetch('http://localhost:8080/api/user', myInit)
-        .then(function(response) { 
-            response.json().then( el => {
-                console.log(el);
-                this.setUserInfo(el);
-            })
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then( user => {
+                    this.setUserInfo(user);
+                })
+            } else {
+                document.location.href = './login.html'
+            }
         });
 }
 

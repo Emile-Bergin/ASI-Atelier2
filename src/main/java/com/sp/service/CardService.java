@@ -32,12 +32,18 @@ public class CardService {
         return true;
     }
 
-    public boolean buyCard(UserTransaction transaction) {/*
-        Integer price = cardRepository.getPrice(transaction.getIdCard());
-        Integer wallet = userRepository.getWallet(transaction.getIdUser());
-        if(userRepository.setWallet(transaction.getIdUser(), wallet-price)){
-            return cardRepository.addUserIdToCard(transaction.getIdUser());
-        }*/
+    public boolean buyCard(UserTransaction transaction) {
+        CardEntity card = cardRepository.findById(transaction.getIdCard())
+            .orElseThrow(() -> new RuntimeException("La carte recherchee n existe pas"));
+
+        UserEntity user = userRepository.findById(transaction.getIdUser())
+            .orElseThrow(() -> new RuntimeException("La carte recherchee n existe pas"));
+
+        if (user.getWallet() > card.getPrice()) {
+            userRepository.setWallet(transaction.getIdUser(), (user.getWallet()-card.getPrice()));
+            cardRepository.addUserIdToCard(transaction.getIdCard(), transaction.getIdUser());
+            return true;
+        }
         return false;
     }
 

@@ -12,12 +12,14 @@ function getCardList() {
         cache: 'default'
     };
 
-    fetch('http://localhost:8080/api/card/list/1', myInit)
+
+    fetch('http://localhost:8080/api/card/list/user', myInit)
         .then(function (response) {
-            response.json().then(el => {
-                console.log(el);
-                this.setList(el);
-            })
+            if (response.ok) {
+                response.json().then( cards => {
+                    this.setList(cards);
+                })
+            }
         });
 }
 
@@ -26,10 +28,12 @@ function setList(list) {
         let clone = document.importNode(template.content, true);
 
         newContent = clone.firstElementChild.innerHTML
+            .replace(/{{id}}/g, card.id)
             .replace(/{{title}}/g, card.title)
             .replace(/{{description}}/g, card.description)
             .replace(/{{family_name}}/g, card.family.name)
             .replace(/{{type_name}}/g, card.type.name)
+            .replace(/{{type_color}}/g, card.type.color)
             .replace(/{{health_point}}/g, card.healthPoint)
             .replace(/{{price}}/g, card.price);
         clone.firstElementChild.innerHTML = newContent;
@@ -39,4 +43,6 @@ function setList(list) {
     }
 }
 
-
+function sellCard(id) {
+    console.log(id);
+}

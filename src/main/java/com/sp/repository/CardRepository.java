@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CardRepository extends JpaRepository<CardEntity, Integer> {
+public interface CardRepository extends JpaRepository<CardEntity, Long> {
 
     @Query(
         value = "SELECT * FROM card c WHERE c.id_user = ?1", 
@@ -19,5 +19,10 @@ public interface CardRepository extends JpaRepository<CardEntity, Integer> {
     @Query(value = "SELECT * FROM card c WHERE c.id_user is null", 
     nativeQuery = true)
     List<CardEntity> findAllByUserNull();
+
+
+    @Query(value = "UPDATE card c SET c.id_user = ?2 WHERE c.id = ?1", 
+    nativeQuery = true)
+    void addUserIdToCard(Long idCard, Long idUser);
 
 }

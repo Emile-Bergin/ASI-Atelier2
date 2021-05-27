@@ -33,6 +33,10 @@
                         <tr>
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                ID
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nom
                             </th>
                             <th scope="col"
@@ -66,6 +70,13 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="ml-4 text-sm font-medium text-gray-900">
+                                            {{id}}
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="ml-4 text-sm font-medium text-gray-900">
                                             {{title}}
                                         </div>
                                     </div>
@@ -77,9 +88,9 @@
                                     {{family_name}}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                {{type_name}}
-                                            </span>
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full text-white {{type_color}}">
+                                        {{type_name}}
+                                    </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{health_point}} HP</div>
@@ -88,7 +99,7 @@
                                     <div class="text-sm text-gray-900">{{price}} €</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Vendre</a>
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-900" onclick="sellCard('{{id}}')">Vendre</a>
                                 </td>
                             </tr>
                         </template>
@@ -99,7 +110,7 @@
         </div>
     </div>
 </div>
-<script src="./js/card-list/card-sell-list.js"></script>
 <script src="./js/header.js"></script>
+<script src="./js/card-list/card-sell-list.js"></script>
 </body>
 </html>
