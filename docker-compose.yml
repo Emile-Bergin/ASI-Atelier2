@@ -2,7 +2,7 @@ version: "3.3"
 services:
   web:
     container_name: web
-    build: .
+    build: Backend/.
     networks:
       - app-network
     environment:
