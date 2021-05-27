@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- importer le fichier de style -->
+    <link rel="stylesheet" href="css/style1.css" media="screen" type="text/css"/>
+</head>
+<body>
+<div id="container">
+    <!-- zone de connexion -->
+
+    <form id="myForm">
+        <h1>Inscritpion</h1>
+
+        <label><b>Nom d'utilisateur</b></label>
+        <input type="text" id="username" placeholder="Entrer le nom d'utilisateur" name="name" required>
+        <label><b>Surnom</b></label>
+        <input type="text" id="surname" placeholder="Entrer votre surnom" name="surname" required>
+
+        <label><b>Mot de passe</b></label>
+        <input type="password" id="password" placeholder="Entrer le mot de passe" name="password" required>
+    </form>
+    <input type="submit" onclick="signup()">
+</div>
+<script>
+    function signup() {
+        const form = {
+            name: document.getElementById("username").value,
+            surname: document.getElementById("surname").value,
+            password: document.getElementById("password").value,
+            wallet: 100
+        }
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        fetch('http://localhost:8080/api/auth/signup', { 
+            method: 'POST',
+            body: JSON.stringify(form),
+            headers: myHeaders,
+         }).then(function(response) {
+             console.log(response);
+             if (response.ok) {
+                 document.location.href = "./login.html";
+             }
+        });
+    }
+</script>
+</body>
+</html>

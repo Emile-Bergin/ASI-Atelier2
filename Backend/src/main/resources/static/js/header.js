@@ -1,4 +1,3 @@
-console.log("yousk2");
 this.getUserData();
 function getUserData() {
     var myHeaders = new Headers();

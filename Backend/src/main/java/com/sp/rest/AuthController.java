@@ -24,8 +24,8 @@ public class AuthController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/api/auth/signup",
-            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public UserEntity signup(UserEntity userEntity) {
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public UserEntity signup(@RequestBody UserEntity userEntity) {
         return this.authService.signup(userEntity);
     }
 
