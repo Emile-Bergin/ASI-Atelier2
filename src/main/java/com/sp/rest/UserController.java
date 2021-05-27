@@ -17,7 +17,7 @@ public class UserController {
     }
 
     @GetMapping("/api/user")
-    UserEntity findUserById(@CookieValue("session") int cookie) {
+    UserEntity findUserById(@CookieValue("session") long cookie) {
         return this.authService.getUser(cookie);
     }
 

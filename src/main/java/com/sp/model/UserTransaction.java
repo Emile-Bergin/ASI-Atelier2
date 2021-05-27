@@ -2,9 +2,9 @@ package com.sp.model;
 
 public class UserTransaction {
     private Long idUser;
-    private Integer idCard;
+    private Long idCard;
 
-    public UserTransaction(Long idUser, Integer idCard) {
+    public UserTransaction(Long idUser, Long idCard) {
         this.idUser = idUser;
         this.idCard = idCard;
     }
@@ -21,7 +21,7 @@ public class UserTransaction {
         return idUser;
     }
 
-    public Integer getIdCard() {
+    public Long getIdCard() {
         return idCard;
     }
 }
