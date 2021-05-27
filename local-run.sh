@@ -1,3 +1,3 @@
 #!/bin/bash
-mvn package
+mvn install -f Backend/pom.xml -DskipTests
 docker-compose up -d
