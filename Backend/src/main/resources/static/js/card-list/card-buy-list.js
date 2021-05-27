@@ -55,24 +55,27 @@ function buyCard(idCard) {
     fetch('http://localhost:8080/api/user', getUser)
     .then(function(response) { 
         response.json().then( user => {
-            console.log(user);
-                const buyCard = {
-                    method: 'POST',
-                    headers: myHeaders,
-                    mode: 'cors',
-                    cache: 'default',
-                    body: JSON.stringify({
-                        idUser: user.id,
-                        idCard: parseInt(idCard, 10)
-                    })
-                };
+            const buyCard = {
+                method: 'POST',
+                headers: myHeaders,
+                mode: 'cors',
+                cache: 'default',
+                body: JSON.stringify({
+                    idUser: user.id,
+                    idCard: parseInt(idCard, 10)
+                })
+            };
 
-                fetch('http://localhost:8080/api/card/buy', buyCard)
-                    .then(function(response) { 
-                        response.json().then( res => {
-                            console.log(res);
-                        })
-                    });
+            fetch('http://localhost:8080/api/card/buy', buyCard)
+                .then(function(response) { 
+                    response.json().then( res => {
+                        if (res == true) {
+                            document.location.reload();
+                        } else {
+                            alert("Impossible d'acheter cette carte");
+                        }
+                    })
+                });
             })
         });
 }

@@ -43,6 +43,42 @@ function setList(list) {
     }
 }
 
-function sellCard(id) {
-    console.log(id);
+function sellCard(idCard) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const getUser = {
+        method: 'GET',
+        headers: myHeaders,
+        mode: 'cors',
+        cache: 'default'
+    };
+
+    
+    fetch('http://localhost:8080/api/user', getUser)
+    .then(function(response) { 
+        response.json().then( user => {
+            const sellCard = {
+                method: 'POST',
+                headers: myHeaders,
+                mode: 'cors',
+                cache: 'default',
+                body: JSON.stringify({
+                    idUser: user.id,
+                    idCard: parseInt(idCard, 10)
+                })
+            };
+
+            fetch('http://localhost:8080/api/card/sell', sellCard)
+                .then(function(response) { 
+                    response.json().then( res => {
+                        if (res == true) {
+                            document.location.reload();
+                        } else {
+                            alert("Impossible de vendre cette carte");
+                        }
+                    })
+                });
+            })
+        });
 }

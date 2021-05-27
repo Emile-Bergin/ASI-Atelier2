@@ -21,14 +21,13 @@ public class CardService {
 
     public boolean sellCard(UserTransaction transaction) {
         CardEntity card = cardRepository.findById(transaction.getIdCard())
-                .orElseThrow(() -> new RuntimeException("La carte recherchee n existe pas"));
-        card.setUser(null);
-        cardRepository.save(card);
-        Integer price = card.getPrice();
+            .orElseThrow(() -> new RuntimeException("La carte recherchee n existe pas"));
+
         UserEntity user = userRepository.findById(transaction.getIdUser())
-                .orElseThrow(() -> new RuntimeException("L'user recherche n existe pas"));
-        user.setWallet(user.getWallet() + price);
-        userRepository.save(user);
+            .orElseThrow(() -> new RuntimeException("L'utilisateur recherchee n existe pas"));
+
+        userRepository.setWallet(user.getId(), (user.getWallet()+card.getPrice()));
+        cardRepository.userSetNull(card.getId());
         return true;
     }
 
@@ -37,11 +36,11 @@ public class CardService {
             .orElseThrow(() -> new RuntimeException("La carte recherchee n existe pas"));
 
         UserEntity user = userRepository.findById(transaction.getIdUser())
-            .orElseThrow(() -> new RuntimeException("La carte recherchee n existe pas"));
+            .orElseThrow(() -> new RuntimeException("L'utilisateur recherchee n existe pas"));
 
         if (user.getWallet() > card.getPrice()) {
-            userRepository.setWallet(transaction.getIdUser(), (user.getWallet()-card.getPrice()));
-            cardRepository.addUserIdToCard(transaction.getIdCard(), transaction.getIdUser());
+            userRepository.setWallet(user.getId(), (user.getWallet()-card.getPrice()));
+            cardRepository.addUserIdToCard(card.getId(), user.getId());
             return true;
         }
         return false;
