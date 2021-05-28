@@ -18,7 +18,7 @@ public interface CardRepository extends JpaRepository<CardEntity, Long> {
     @Query(
         value = "SELECT * FROM card c WHERE c.id_user = ?1", 
         nativeQuery = true)
-    List<CardEntity> findAllByUser(int idUser);
+    List<CardEntity> findAllByUser(long idUser);
 
     // Find all card without user
     @Query(value = "SELECT * FROM card c WHERE c.id_user is null", 

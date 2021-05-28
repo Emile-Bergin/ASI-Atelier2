@@ -17,6 +17,9 @@ public class CardFamilyEntity {
     @Column(name = "code")
     private String code;
 
+    @Column(name = "color")
+    private String color;
+
     @OneToMany(mappedBy = "family", cascade = CascadeType.ALL)
     private List<CardEntity> card;
 
@@ -37,6 +40,14 @@ public class CardFamilyEntity {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
 	/*@Override
