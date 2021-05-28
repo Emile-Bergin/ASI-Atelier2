@@ -15,7 +15,7 @@ jobs:
           projectBaseDir: "Backend"
           args: >
             -Dsonar.organization=Emile-Bergin
-            -Dsonar.projectKey=my-7b63a7818d770c25effc4c60846dff6137e1e5ee
+            -Dsonar.projectKey=7b63a7818d770c25effc4c60846dff6137e1e5ee
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.sources=lib/
             -Dsonar.test.exclusions=tests/**
@@ -28,6 +28,8 @@ jobs:
         env:
           GITHUB_TOKEN: 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
           SONAR_TOKEN: 7b63a7818d770c25effc4c60846dff6137e1e5ee
+          SONAR_PROJECTKEY: 7b63a7818d770c25effc4c60846dff6137e1e5ee
+          SONAR_ORGANIZATION: Emile-Bergin
   build:
 
     runs-on: ubuntu-latest
