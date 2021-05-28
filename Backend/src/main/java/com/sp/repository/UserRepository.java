@@ -12,8 +12,10 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
+    // Find use by surname and password
     Optional<UserEntity> findByPasswordAndSurname(String password, String surname);
 
+    // Save user wallet
     @Modifying @Transactional
     @Query(value = "UPDATE customer SET wallet = ?2 WHERE id = ?1", 
     nativeQuery = true)

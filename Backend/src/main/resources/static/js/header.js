@@ -28,3 +28,23 @@ function setUserInfo(user) {
     walletView.innerHTML = user.wallet+' €';
     nameView.innerHTML = user.name;
 }
+
+function logout() {
+    var myHeaders = new Headers();
+
+    var myInit = {
+        method: 'GET',
+        headers: myHeaders,
+        mode: 'cors',
+        cache: 'default'
+    };
+
+    fetch('http://localhost:8080/api/auth/logout', myInit)
+        .then(function(response) {
+            if (response.ok) {
+                    document.location.reload();
+            } else {
+                document.location.href = './login.html'
+            }
+        });
+}

@@ -1,6 +1,5 @@
 package com.sp.rest;
 
-
 import com.sp.model.UserEntity;
 import com.sp.service.UserService;
 
@@ -20,6 +19,4 @@ public class UserController {
     UserEntity findUserById(@CookieValue("session") long cookie) {
         return this.authService.getUser(cookie);
     }
-
-
 }

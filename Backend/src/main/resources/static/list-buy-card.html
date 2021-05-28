@@ -10,12 +10,20 @@
 <body>
 <div class="w-full h-24 bg-red-800">
     <div class="flex flex-row text-white h-full items-center">
-        <div class="text-lg font-semibold w-1/4 ml-4" id="wallet">
+        <div class="flex flex-row w-1/3 text-lg font-semibold ml-4">
+            <div class="flex flex-row-reverse mr-2" id="name">
+            </div>
+            -
+            <div class="ml-2" id="wallet">
+            </div>
         </div>
-        <div class="text-2xl font-bold w-2/4 text-center">
+        <div class="text-2xl font-bold w-1/3 text-center">
             Achat de cartes Pokemon <sup class="text-sm">©</sup>
         </div>
-        <div class="flex flex-row-reverse w-1/4 mr-4" id="name">
+        <div class="flex flex-row-reverse w-1/3 mr-4">
+            <div class="border-2 border-white rounded-lg w-20 h-10 cursor-pointer text-center text-lg hover:bg-red-500" onclick="logout()">
+                Logout
+            </div>
         </div>
     </div>
 </div>

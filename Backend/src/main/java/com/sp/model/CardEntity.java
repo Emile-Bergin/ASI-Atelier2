@@ -34,9 +34,7 @@ public class CardEntity {
     @JoinColumn(name = "id_user")
     private UserEntity user;
 
-    public CardEntity() {
-
-    }
+    public CardEntity() {  }
 
     public Long getId() {
         return this.id;

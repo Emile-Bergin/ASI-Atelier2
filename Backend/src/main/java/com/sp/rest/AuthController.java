@@ -23,14 +23,12 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/api/auth/signup",
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "/api/auth/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserEntity signup(@RequestBody UserEntity userEntity) {
         return this.authService.signup(userEntity);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/api/auth/login",
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "/api/auth/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) {
         try {
             UserEntity result = authService.login(loginDTO);
@@ -57,9 +55,7 @@ public class AuthController {
             cookie.setHttpOnly(true);
             cookie.setPath("/");
             response.addCookie(cookie);
-
-
-        }catch (Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
         return ResponseEntity.ok().build();
