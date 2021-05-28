@@ -46,7 +46,7 @@ VALUES ('Bulbizarre', 'Il a une etrange graine plantee sur son dos. Elle grandit
         100, 1, 1, null),
        ('Lucario', 'Il peut deviner les pensees et les mouvements des autres en analysant leur aura.', 130, 200, 1, 3,
         null),
-        ('Mega-Lucario', 'L''energie de la Mega-Évolution s''est melangee à son aura. Ensemble, elles ont coule sur son corps et y ont laisse des traces noires.', 130, 200, 2, 3,
+        ('Mega-Lucario', 'L''energie de la Mega-Évolution s''est melangee à son aura. Ensemble, elles ont coule sur son corps et y ont laisse des traces noires.', 360, 200, 2, 3,
         null),
-        ('Dracaufeau Gigamax', 'Grace au phenomene Gigamax, il a pris la forme d''un Dracaufeu geant dote d''ailes de feu.', 130, 200, 4, 8,
+        ('Dracaufeau Gigamax', 'Grace au phenomene Gigamax, il a pris la forme d''un Dracaufeu geant dote d''ailes de feu.', 250, 200, 4, 8,
         null);
