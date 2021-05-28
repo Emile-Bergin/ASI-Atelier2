@@ -72,45 +72,7 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200" id="tableContent">
-                        <template id="row">
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="ml-4 text-sm font-medium text-gray-900">
-                                            {{id}}
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="ml-4 text-sm font-medium text-gray-900">
-                                            {{title}}
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{description}}</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{family_name}}
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full text-white {{type_color}}">
-                                        {{type_name}}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{health_point}} HP</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{price}} €</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900" onclick="sellCard('{{id}}')">Vendre</a>
-                                </td>
-                            </tr>
-                        </template>
+                        <tbody class="bg-white divide-y divide-gray-200" id="row">
                         </tbody>
                     </table>
                 </div>
@@ -120,5 +82,6 @@
 </div>
 <script src="./js/header.js"></script>
 <script src="./js/card-list/card-sell-list.js"></script>
+<script src="./js/card-list/template-card-list.js"></script>
 </body>
 </html>
