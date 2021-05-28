@@ -30,7 +30,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.TOKEN_SONAR }}
           SONAR_PROJECTKEY: ${{ secrets.TOKEN_SONAR }}
           SONAR_ORGANIZATION: Emile-Bergin
-        run: example-command "$env:SUPER_SECRET"
   build:
 
     runs-on: ubuntu-latest
