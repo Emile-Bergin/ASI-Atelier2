@@ -7,7 +7,19 @@ on:
     branches: [ dev ]
 
 jobs:
-
+  Qsonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          projectBaseDir: "./Backend"
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: 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
+          SONAR_TOKEN: 7b63a7818d770c25effc4c60846dff6137e1e5ee
   build:
 
     runs-on: ubuntu-latest

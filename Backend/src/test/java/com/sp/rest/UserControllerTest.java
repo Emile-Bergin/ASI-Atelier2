@@ -9,6 +9,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+
+import javax.servlet.http.Cookie;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -18,6 +21,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class UserControllerTest {
     @Autowired
     private MockMvc mockMvc;
+
+    @Autowired
+    private UserRepository repository;
+
 
     static {
         System.setProperty("spring.config.location", "classpath:application.properties");
@@ -33,7 +40,8 @@ public class UserControllerTest {
     @Test
     void getUserTest() throws Exception {
         mockMvc.perform(
-                get("/api/user/3")
+                get("/api/user")
+                .cookie(new Cookie("session","3"))
         ).andExpect(status().isOk());
     }
 }
