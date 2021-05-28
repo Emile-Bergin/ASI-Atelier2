@@ -1,74 +1,60 @@
-let template = document.querySelector("#row");
+const template = document.querySelector("#row");
+const defaultGetHeader = new Headers;
+const defaultGetInit = {
+    method: 'GET',
+    headers: defaultGetHeader,
+    mode: 'cors',
+    cache: 'default'
+};
+
+let buyCardHeader = new Headers;
+buyCardHeader.append("Content-Type", "application/json")
+const buyCardInit = {
+    method: 'POST',
+    headers: buyCardHeader,
+    mode: 'cors',
+    cache: 'default',
+    body: {}
+};
+
 this.getCardList();
 
 function getCardList() {
 
-    var myHeaders = new Headers();
-
-    var myInit = {
-        method: 'GET',
-        headers: myHeaders,
-        mode: 'cors',
-        cache: 'default'
-    };
-
-    fetch('http://localhost:8080/api/card/list/sell', myInit)
+    fetch('http://localhost:8080/api/card/list/sell', defaultGetInit)
         .then(function(response) { 
-            response.json().then( el => {
-                this.setList(el);
-            })
+            if (response.ok) {
+                response.json().then( cards => {
+                    this.setList(cards);
+                })
+            } else {
+                this.setList();
+            }
         });
 }
 
-function setList(list) {
-    for (const card of list) {
-        let clone = document.importNode(template.content, true);
-        newContent = clone.firstElementChild.innerHTML
-            .replace(/{{id}}/g, card.id)
-            .replace(/{{title}}/g, card.title)
-            .replace(/{{description}}/g, card.description)
-            .replace(/{{family_name}}/g, card.family.name)
-            .replace(/{{type_name}}/g, card.type.name)
-            .replace(/{{type_color}}/g, card.type.color)
-            .replace(/{{health_point}}/g, card.healthPoint)
-            .replace(/{{price}}/g, card.price)
-        clone.firstElementChild.innerHTML = newContent;
-        
-        let cardContainer = document.querySelector("#tableContent");
-        cardContainer.appendChild(clone);
+function setList(list = []) {
+    let templateList = '';
+    for (let card of list) {
+        templateList += funcCardList(card, 'buy');
     }
+    console.log('templateList :>> ', templateList);
+    document.getElementById("row").innerHTML = templateList;
 }
 
 function buyCard(idCard) {
 
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    fetch('http://localhost:8080/api/user', defaultGetInit)
+    .then(function(responseUser) { 
+        responseUser.json().then( user => {
+            buyCardInit.body = JSON.stringify({
+                idUser: user.id,
+                idCard: parseInt(idCard, 10)
+            })
 
-    const getUser = {
-        method: 'GET',
-        headers: myHeaders,
-        mode: 'cors',
-        cache: 'default'
-    };
-
-    
-    fetch('http://localhost:8080/api/user', getUser)
-    .then(function(response) { 
-        response.json().then( user => {
-            const buyCard = {
-                method: 'POST',
-                headers: myHeaders,
-                mode: 'cors',
-                cache: 'default',
-                body: JSON.stringify({
-                    idUser: user.id,
-                    idCard: parseInt(idCard, 10)
-                })
-            };
-
-            fetch('http://localhost:8080/api/card/buy', buyCard)
-                .then(function(response) { 
-                    response.json().then( res => {
+            fetch('http://localhost:8080/api/card/buy', buyCardInit)
+                .then(function(responseBuyCard) { 
+                    responseBuyCard.json().then( res => {
                         if (res == true) {
                             document.location.reload();
                         } else {
@@ -79,5 +65,4 @@ function buyCard(idCard) {
             })
         });
 }
-
 
