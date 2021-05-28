@@ -14,20 +14,24 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CardRepository extends JpaRepository<CardEntity, Long> {
 
+    // Find all card with specific user id
     @Query(
         value = "SELECT * FROM card c WHERE c.id_user = ?1", 
         nativeQuery = true)
     List<CardEntity> findAllByUser(int idUser);
 
+    // Find all card without user
     @Query(value = "SELECT * FROM card c WHERE c.id_user is null", 
     nativeQuery = true)
     List<CardEntity> findAllByUserNull();
 
+    // Save a card for a user
     @Modifying @Transactional
     @Query(value = "UPDATE card SET id_user = ?2 WHERE id = ?1", 
     nativeQuery = true)
     void addUserIdToCard(Long idCard, Long idUser);
 
+    // Save a card without user
     @Modifying @Transactional
     @Query(value = "UPDATE card SET id_user = NULL WHERE id = ?1", 
     nativeQuery = true)

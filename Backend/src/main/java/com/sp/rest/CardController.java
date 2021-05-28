@@ -34,13 +34,11 @@ public class CardController {
 
     @PostMapping("/sell")
     Boolean sellCard(@RequestBody UserTransaction transaction) {
-        System.out.println(transaction.toString());
         return cardService.sellCard(transaction);
     }
 
     @PostMapping("/buy")
     Boolean buyCard(@RequestBody UserTransaction transaction) {
-        System.out.println(transaction.toString());
         return cardService.buyCard(transaction);
     }
 }
