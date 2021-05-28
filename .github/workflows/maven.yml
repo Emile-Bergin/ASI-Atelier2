@@ -10,14 +10,14 @@ jobs:
   Qsonarcloud:
     runs-on: ubuntu-latest
     steps:
-      - name: before script
-        run: cd Backend
       - uses: actions/checkout@v2
         with:
           projectBaseDir: Backend
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
       - name: SonarCloud Scan
+        with:
+          projectBaseDir: Backend
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
