@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class AuthController {
     private AuthService authService;
+    private jsonFormat = MediaType.APPLICATION_JSON_VALUE;
 
     public AuthController(AuthService authService) {
         this.authService = authService;
