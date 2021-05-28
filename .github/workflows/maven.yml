@@ -25,7 +25,6 @@ jobs:
           SONAR_PROJECTKEY: ${{ secrets.TOKEN_SONAR }}
           SONAR_ORGANIZATION: Emile-Bergin
   build:
-
     runs-on: ubuntu-latest
 
     steps:
