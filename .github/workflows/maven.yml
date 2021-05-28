@@ -10,17 +10,10 @@ jobs:
   Qsonarcloud:
     runs-on: ubuntu-latest
     steps:
+      - name: before script
+        run: cd Backend
       - uses: actions/checkout@v2
         with:
-          projectBaseDir: "Backend"
-          args: >
-            -Dsonar.organization=Emile-Bergin
-            -Dsonar.projectKey=${{ secrets.TOKEN_SONAR }}
-            -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.sources=lib/
-            -Dsonar.test.exclusions=tests/**
-            -Dsonar.tests=tests/
-            -Dsonar.verbose=true
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
       - name: SonarCloud Scan
