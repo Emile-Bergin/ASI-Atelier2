@@ -28,8 +28,8 @@ public class CardController {
     }
 
     @GetMapping("/list/user")
-    List<CardEntity> getUserCards(@CookieValue("session") int idUser) {
-        return cardService.getUserCards(idUser);
+    List<CardEntity> getUserCards(@CookieValue("session") long cookie) {
+        return cardService.getUserCards(cookie);
     }
 
     @PostMapping("/sell")

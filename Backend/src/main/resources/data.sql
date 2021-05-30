@@ -1,15 +1,15 @@
 INSERT INTO customer (name, surname, password, token, wallet)
-VALUES ('Aymrick Cougoulat', 'Railgun', 'root', 'testtoken', 500),
+VALUES ('Aymrick Cougoulat', 'Railgun', 'root', 'testtoken', 300),
        ('Emile Bergin', '3mile', 'root', 'testtoken', 300),
-       ('Clement Dethoor', '2Dethor', 'root', 'testtoken', 1500),
+       ('Clement Dethoor', '2Dethor', 'root', 'testtoken', 300),
        ('Hugo Benucci', 'Hug0', 'root', 'testtoken', 300),
-       ('Gregoire Chateauneuf', 'Gr3g', 'root', 'testtoken', 5000);
+       ('Gregoire Chateauneuf', 'Gr3g', 'root', 'testtoken', 300);
 
-INSERT INTO card_family (name, code)
-VALUES ('Normal', 'NOR'),
-       ('Mega-Pokemon', 'MEGA'),
-       ('Primo-resurgence', 'PRI'),
-       ('Gigamax', 'GIGA');
+INSERT INTO card_family (name, code, color)
+VALUES ('Normal', 'NOR', 'text-gray-500'),
+       ('Mega-Pokemon', 'MEGA', 'text-blue-800'),
+       ('Primo-resurgence', 'PRI', 'text-gray-500'),
+       ('Gigamax', 'GIGA', 'text-red-800');
 
 INSERT INTO card_type (name, code, color)
 VALUES ('Normal', 'NOR', 'bg-red-800'),
@@ -45,4 +45,8 @@ VALUES ('Bulbizarre', 'Il a une etrange graine plantee sur son dos. Elle grandit
        ('Evoli', 'Il a la capacite de changer la composition de son corps pour s''adapter à son environnement.', 30,
         100, 1, 1, null),
        ('Lucario', 'Il peut deviner les pensees et les mouvements des autres en analysant leur aura.', 130, 200, 1, 3,
+        null),
+        ('Mega-Lucario', 'L''energie de la Mega-Évolution s''est melangee à son aura. Ensemble, elles ont coule sur son corps et y ont laisse des traces noires.', 360, 200, 2, 3,
+        null),
+        ('Dracaufeau Gigamax', 'Grace au phenomene Gigamax, il a pris la forme d''un Dracaufeu geant dote d''ailes de feu.', 250, 200, 4, 8,
         null);

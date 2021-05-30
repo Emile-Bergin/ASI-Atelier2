@@ -24,9 +24,11 @@ function getCardList() {
 }
 
 function setList(list) {
+    let templateList = '';
     for (let card of list) {
-        document.getElementById("row").innerHTML = funcCardList(card, 'sell');
+        templateList += funcCardList(card, 'sell');
     }
+    document.getElementById("row").innerHTML = templateList;
 }
 
 function sellCard(idCard) {

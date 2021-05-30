@@ -38,7 +38,6 @@ function setList(list = []) {
     for (let card of list) {
         templateList += funcCardList(card, 'buy');
     }
-    console.log('templateList :>> ', templateList);
     document.getElementById("row").innerHTML = templateList;
 }
 

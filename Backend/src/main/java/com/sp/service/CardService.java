@@ -38,7 +38,7 @@ public class CardService {
         UserEntity user = userRepository.findById(transaction.getIdUser())
             .orElseThrow(() -> new RuntimeException("L'utilisateur recherchee n existe pas"));
 
-        if (user.getWallet() > card.getPrice()) {
+        if (user.getWallet() >= card.getPrice()) {
             userRepository.setWallet(user.getId(), (user.getWallet()-card.getPrice()));
             cardRepository.addUserIdToCard(card.getId(), user.getId());
             return true;
@@ -54,7 +54,7 @@ public class CardService {
         return cardRepository.findAllByUserNull();
     }
 
-    public List<CardEntity> getUserCards(Integer idUser) {
+    public List<CardEntity> getUserCards(Long idUser) {
         return cardRepository.findAllByUser(idUser);
     }
 }
