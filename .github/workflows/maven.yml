@@ -7,8 +7,8 @@ on:
     branches: [ dev ]
 
 jobs:
-  Qsonarcloud:
-    name: SonarCloud
+  sonarcloud:
+    name: sonarCloud
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
