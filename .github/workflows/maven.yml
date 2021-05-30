@@ -11,11 +11,11 @@ jobs:
     name: sonarCloud
     runs-on: ubuntu-latest
     steps:
-      - name: package
-        run: cd Backend && mvn -B package --file pom.xml -DskipTests
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: package
+        run: cd Backend && mvn -B package --file pom.xml -DskipTests
       - name: SonarCloud Scan
         with:
           projectBaseDir: Backend
