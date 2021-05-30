@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Pokemon-Explorer</title>
+</head>
+<body>
+<div class="w-full h-24 bg-red-800">
+    <div class="flex flex-row text-white h-full items-center">
+        <div class="flex flex-row w-1/3 text-lg font-semibold ml-4">
+            <div class="flex flex-row-reverse mr-2" id="name">
+            </div>
+            -
+            <div class="ml-2" id="wallet">
+            </div>
+        </div>
+        <div class="text-2xl font-bold w-1/3 text-center">
+            Achat de cartes Pokemon <sup class="text-sm">©</sup>
+        </div>
+        <div class="flex flex-row-reverse w-1/3 mr-4">
+            <div class="border-2 border-white rounded-lg w-20 h-10 cursor-pointer text-center text-lg hover:bg-red-500" onclick="logout()">
+                Logout
+            </div>
+        </div>
+    </div>
+</div>
+<button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 ml-6 mt-4 rounded-2xl"
+        onclick="window.location='./main.html';">
+    Revenir au menu
+</button>
+<div class="flex flex-col w-full">
+    <div class="flex flex-col">
+        <div class="overflow-x-auto w-full">
+            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                ID
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Nom
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Description
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Famille
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Type
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Point de vie
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Prix
+                            </th>
+                            <th scope="col" class="relative px-6 py-3">
+                                <span class="sr-only">Edit</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200" id="row"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="./js/header.js"></script>
+    <script src="./js/card-list/card-buy-list.js"></script>
+    <script src="./js/card-list/template-card-list.js"></script>
+</body>
+</html>

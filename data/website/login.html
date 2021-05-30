@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- importer le fichier de style -->
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+</head>
+<body>
+<div id="container">
+    <!-- zone de connexion -->
+
+    <form id="login-form">
+        <h1>Connexion</h1>
+
+        <label><b>Nom d'utilisateur</b></label>
+        <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" id="username" required>
+
+        <label><b>Mot de passe</b></label>
+        <input type="password" placeholder="Entrer le mot de passe" name="password" id="password" required>
+
+
+        
+        <!--<input type="submit" id='submit' value='Sign Up' onclick="RedirectionJavascript()" >-->
+        
+        </form>
+    <input type="submit" onclick="login()" >
+    <a href="signup.html">Sign Up</a>
+</div>
+<script type="text/javascript">
+    function login() {
+        const form = {
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value
+        }
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        fetch('http://localhost:8080/api/auth/login', { 
+            method: 'POST',
+            body: JSON.stringify(form),
+            headers: myHeaders,
+         }).then(function(response) {
+             console.log(response);
+             if (response.ok) {
+                 document.location.href = "./main.html";
+             }
+        });
+    }
+</script>
+</body>
+</html>
+
