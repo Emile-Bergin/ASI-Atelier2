@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
-    private UserService authService;
+    private UserService userService;
 
-    public UserController(UserService authService) {
-        this.authService = authService;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/api/user")
     UserEntity findUserById(@CookieValue("session") long cookie) {
-        return this.authService.getUser(cookie);
+        return this.userService.getUser(cookie);
     }
 }

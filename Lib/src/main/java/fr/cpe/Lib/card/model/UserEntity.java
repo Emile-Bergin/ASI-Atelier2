@@ -1,50 +1,19 @@
-package cpe.back.user;
+package fr.cpe.Lib.card.model;
 
-import fr.cpe.Lib.card.model.CardEntity;
-import fr.cpe.Lib.user.model.UserDTO;
-
-import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "customer")
 public class UserEntity {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
     private Long id;
-
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "surname")
     private String surname;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "token")
     private String token;
-
-    @Column(name = "wallet")
     private int wallet;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<CardEntity> card;
 
     public UserEntity() {
 
-    }
-
-    UserDTO toDTO(){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setId(id);
-        userDTO.setName(name);
-        userDTO.setSurname(surname);
-        userDTO.setPassword(password);
-        userDTO.setToken(token);
-        userDTO.setWallet(wallet);
-        return userDTO;
     }
 
     public UserEntity(long id, String name, String surname, String password, String token, int wallet) {
