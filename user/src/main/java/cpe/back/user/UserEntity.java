@@ -1,6 +1,6 @@
 package cpe.back.user;
 
-import fr.cpe.Lib.card.model.CardEntity;
+import fr.cpe.Lib.card.model.CardDTO;
 import fr.cpe.Lib.user.model.UserDTO;
 
 import javax.persistence.*;
@@ -30,7 +30,7 @@ public class UserEntity {
     private int wallet;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<CardEntity> card;
+    private List<CardDTO> card;
 
     public UserEntity() {
 

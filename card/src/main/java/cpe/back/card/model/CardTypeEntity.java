@@ -1,12 +1,28 @@
-package fr.cpe.Lib.card.model;
+package cpe.back.card.model;
 
+import fr.cpe.Lib.card.model.CardTypeDTO;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "card_type")
 public class CardTypeEntity {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "code")
     private String code;
+
+    @Column(name = "color")
     private String color;
+
+    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
     private List<CardEntity> card;
 
     public CardTypeEntity() {
@@ -34,6 +50,14 @@ public class CardTypeEntity {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public CardTypeDTO toDTO() {
+        CardTypeDTO cardTypeDTO = new CardTypeDTO();
+        cardTypeDTO.setName(this.name);
+        cardTypeDTO.setCode(this.code);
+        cardTypeDTO.setColor(this.color);
+        return cardTypeDTO;
     }
 
 	/*@Override

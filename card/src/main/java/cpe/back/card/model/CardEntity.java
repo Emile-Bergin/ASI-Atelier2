@@ -1,16 +1,43 @@
-package fr.cpe.Lib.card.model;
+package cpe.back.card.model;
 
+import fr.cpe.Lib.card.model.CardDTO;
+import fr.cpe.Lib.card.model.CardFamilyDTO;
+import fr.cpe.Lib.card.model.CardTypeDTO;
+import fr.cpe.Lib.user.model.UserDTO;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "card")
 public class CardEntity {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "health_point")
     private int health_point;
+
+    @Column(name = "price")
     private int price;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_type", nullable = false)
     private CardTypeEntity type;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_family", nullable = false)
     private CardFamilyEntity family;
 
-    private UserEntity user;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_user")
+    private UserDTO user;
 
     public CardEntity() {  }
 
@@ -70,11 +97,24 @@ public class CardEntity {
         this.type = type;
     }
 
-    public UserEntity getUser() {
+    public UserDTO getUser() {
         return user;
     }
 
-    public void setUser(UserEntity user) {
+    public void setUser(UserDTO user) {
         this.user = user;
+    }
+
+    public CardDTO toDTO() {
+        CardDTO cardDTO = new CardDTO();
+        cardDTO.setId(this.id);
+        cardDTO.setTitle(this.title);
+        cardDTO.setDescription(this.description);
+        cardDTO.setHealthPoint(this.health_point);
+        cardDTO.setPrice(this.price);
+        cardDTO.setType(this.type.toDTO());
+        cardDTO.setFamily(this.family.toDTO());
+
+        return cardDTO;
     }
 }

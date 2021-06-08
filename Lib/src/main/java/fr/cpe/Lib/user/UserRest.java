@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @FeignClient(value = "microservice-user", url = "http://user:8080/")
 public interface UserRest {
+
     @GetMapping("/api/user")
     UserDTO findUserById(@CookieValue("session") long cookie);
 
@@ -18,4 +18,7 @@ public interface UserRest {
 
     @PostMapping("/api/user/login")
     UserDTO login(LoginDTO loginDTO);
+
+    @PostMapping("/api/user/wallet")
+    Boolean setWallet(Long userId, Integer amount);
 }

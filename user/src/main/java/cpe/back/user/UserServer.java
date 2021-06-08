@@ -29,4 +29,9 @@ public class UserServer implements UserRest {
         UserEntity result = this.userService.login(loginDTO);
         return userMapping.toDTO(result);
     }
+
+    @Override
+    public Boolean setWallet(Long userId, Integer amount) {
+        return this.userService.setWallet(userId,amount);
+    }
 }
