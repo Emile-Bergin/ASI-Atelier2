@@ -21,10 +21,7 @@ public class CardFamilyEntity {
 
     @Column(name = "color")
     private String color;
-
-    @OneToMany(mappedBy = "family", cascade = CascadeType.ALL)
-    private List<CardEntity> card;
-
+    
     public CardFamilyEntity() {
     }
 

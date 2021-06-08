@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public interface UserRest {
 
     @GetMapping("/api/user")
-    UserDTO findUserById(@CookieValue("session") long cookie);
+    UserDTO findUserById(@CookieValue("token") String token);
 
     @PostMapping("/api/user")
     UserDTO saveUser(UserDTO user);

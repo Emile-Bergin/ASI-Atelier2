@@ -76,12 +76,4 @@ UserDTO {
     public void setWallet(int wallet) {
         this.wallet = wallet;
     }
-
-    public List<CardDTO> getCard() {
-        return card;
-    }
-
-    public void setCard(List<CardDTO> card) {
-        this.card = card;
-    }
 }

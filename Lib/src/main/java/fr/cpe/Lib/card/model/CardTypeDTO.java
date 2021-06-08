@@ -7,7 +7,6 @@ public class CardTypeDTO {
     private String name;
     private String code;
     private String color;
-    private List<CardDTO> card;
 
     public CardTypeDTO() {
     }
@@ -35,11 +34,5 @@ public class CardTypeDTO {
     public void setColor(String color) {
         this.color = color;
     }
-
-	/*@Override
-	public String toString() {
-		return "User ["+this.id+"]: name:"+this.name+", surname:"+this.surname;
-	}*/
-
 
 }

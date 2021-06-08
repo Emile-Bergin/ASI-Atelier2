@@ -16,8 +16,8 @@ public class UserServer implements UserRest {
     }
 
     @Override
-    public UserDTO findUserById(long cookie) {
-        return userMapping.toDTO(this.userService.getUser(cookie));
+    public UserDTO findUserById(String token) {
+        return userMapping.toDTO(this.userService.getUserByToken(token));
     }
 
     @Override

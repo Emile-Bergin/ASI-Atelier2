@@ -3,6 +3,7 @@ package cpe.back.auth;
 import fr.cpe.auth.AuthRest;
 import fr.cpe.auth.model.LoginDTO;
 import fr.cpe.user.model.UserDTO;
+import org.apache.catalina.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,10 +31,8 @@ public class AuthController {
     @RequestMapping(method = RequestMethod.POST, value = "/api/auth/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) {
         try {
-            UserDTO result = authService.login(loginDTO);
-            System.out.println(result);
-            Long username = result.getId();
-            Cookie cookie = new Cookie("session", username.toString());
+            UserDTO user = authService.login(loginDTO);
+            Cookie cookie = new Cookie("token", user.getToken());
             cookie.setMaxAge(7 * 24 * 360);
             cookie.setSecure(true);
             cookie.setHttpOnly(true);
@@ -48,7 +47,7 @@ public class AuthController {
     @RequestMapping(method = RequestMethod.GET, value = "/api/auth/logout")
     public ResponseEntity<?> logout(HttpServletResponse response) {
         try {
-            Cookie cookie = new Cookie("session", null);
+            Cookie cookie = new Cookie("token", null);
             cookie.setMaxAge(0);
             cookie.setSecure(true);
             cookie.setHttpOnly(true);

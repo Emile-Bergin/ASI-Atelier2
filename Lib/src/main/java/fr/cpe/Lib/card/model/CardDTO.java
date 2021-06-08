@@ -9,10 +9,9 @@ public class CardDTO {
     private String description;
     private int health_point;
     private int price;
-    private CardTypeDTO type;
-    private CardFamilyDTO family;
-
-    private UserDTO user;
+    private long id_type;
+    private long id_family;
+    private long id_user;
 
     public CardDTO() {  }
 
@@ -56,27 +55,27 @@ public class CardDTO {
         this.price = price;
     }
 
-    public CardFamilyDTO getFamily() {
-        return this.family;
+    public long getIdFamily() {
+        return this.id_family;
     }
 
-    public void setFamily(CardFamilyDTO family) {
-        this.family = family;
+    public void setIdFamily(long id_family) {
+        this.id_family = id_family;
     }
 
-    public CardTypeDTO getType() {
-        return this.type;
+    public long getIdType() {
+        return this.id_type;
     }
 
-    public void setType(CardTypeDTO type) {
-        this.type = type;
+    public void setIdType(long id_type) {
+        this.id_type = id_type;
     }
 
-    public UserDTO getUser() {
-        return user;
+    public long getIdUser() {
+        return id_user;
     }
 
-    public void setUser(UserDTO user) {
-        this.user = user;
+    public void setIdUser(long id_user) {
+        this.id_user = id_user;
     }
 }

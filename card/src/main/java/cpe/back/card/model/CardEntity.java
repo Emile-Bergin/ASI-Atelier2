@@ -27,17 +27,26 @@ public class CardEntity {
     @Column(name = "price")
     private int price;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_type", nullable = false)
-    private CardTypeEntity type;
+    @Column(name = "id_type")
+    private long id_type;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_family", nullable = false)
-    private CardFamilyEntity family;
+    @Column(name = "id_family")
+    private long id_family;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_user")
-    private UserDTO user;
+    @Column(name = "id_user")
+    private long id_user;
+
+    // @ManyToOne(fetch = FetchType.EAGER)
+    // @JoinColumn(name = "id_type", nullable = false)
+    // private CardTypeEntity type;
+
+    // @ManyToOne(fetch = FetchType.EAGER)
+    // @JoinColumn(name = "id_family", nullable = false)
+    // private CardFamilyEntity family;
+
+    // @ManyToOne(fetch = FetchType.EAGER)
+    // @JoinColumn(name = "id_user")
+    // private UserDTO user;
 
     public CardEntity() {  }
 
@@ -81,28 +90,28 @@ public class CardEntity {
         this.price = price;
     }
 
-    public CardFamilyEntity getFamily() {
-        return this.family;
+    public long getIdFamily() {
+        return this.id_family;
     }
 
-    public void setFamily(CardFamilyEntity family) {
-        this.family = family;
+    public void setIdFamily(long id_family) {
+        this.id_family = id_family;
     }
 
-    public CardTypeEntity getType() {
-        return this.type;
+    public long getIdType() {
+        return this.id_type;
     }
 
-    public void setType(CardTypeEntity type) {
-        this.type = type;
+    public void setIdType(long id_type) {
+        this.id_type = id_type;
     }
 
-    public UserDTO getUser() {
-        return user;
+    public long getIdUser() {
+        return id_user;
     }
 
-    public void setUser(UserDTO user) {
-        this.user = user;
+    public void setUser(long id_user) {
+        this.id_user = id_user;
     }
 
     public CardDTO toDTO() {
@@ -112,8 +121,9 @@ public class CardEntity {
         cardDTO.setDescription(this.description);
         cardDTO.setHealthPoint(this.health_point);
         cardDTO.setPrice(this.price);
-        cardDTO.setType(this.type.toDTO());
-        cardDTO.setFamily(this.family.toDTO());
+        cardDTO.setIdType(this.id_type);
+        cardDTO.setIdFamily(this.id_family);
+        cardDTO.setIdUser(this.id_user);
 
         return cardDTO;
     }

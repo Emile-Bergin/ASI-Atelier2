@@ -62,8 +62,6 @@ services:
       - POSTGRES_USER=postgres
     networks:
       - app-network
-    ports:
-    - "5433:5432"
 
   frontend:
       container_name: frontend
