@@ -4,7 +4,9 @@ import fr.cpe.Lib.auth.AuthRest;
 import fr.cpe.Lib.auth.model.LoginDTO;
 import fr.cpe.Lib.user.UserRest;
 import fr.cpe.Lib.user.model.UserDTO;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class UserServer implements UserRest {
     private UserService userService;
 

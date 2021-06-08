@@ -4,10 +4,12 @@ import cpe.back.card.model.CardEntity;
 import fr.cpe.Lib.card.model.CardDTO;
 import fr.cpe.Lib.card.model.UserTransaction;
 import fr.cpe.Lib.user.UserRest;
-import fr.cpe.Lib.user.model.UserDTO;
+import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
+@Service
 public class CardService {
     private CardRepository cardRepository;
     private UserRest userRest;
@@ -26,10 +28,6 @@ public class CardService {
         }else {
             return false;
         }
-        /*UserDTO user = userRepository.findById(transaction.getIdUser())
-                .orElseThrow(() -> new RuntimeException("L'utilisateur recherchee n existe pas"));
-
-        userRepository.setWallet(user.getId(), (user.getWallet()+card.getPrice()));*/
     }
 
     public boolean buyCard(UserTransaction transaction) {
@@ -41,15 +39,6 @@ public class CardService {
         }else {
             return false;
         }
-        /*UserDTO user = userRepository.findById(transaction.getIdUser())
-                .orElseThrow(() -> new RuntimeException("L'utilisateur recherchee n existe pas"));
-
-        if (user.getWallet() >= card.getPrice()) {
-            userRepository.setWallet(user.getId(), (user.getWallet()-card.getPrice()));
-            cardRepository.addUserIdToCard(card.getId(), user.getId());
-            return true;
-        }
-        return false;*/
     }
 
     public List<CardEntity> getCards() {
