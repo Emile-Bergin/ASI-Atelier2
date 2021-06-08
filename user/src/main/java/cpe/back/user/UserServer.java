@@ -26,4 +26,9 @@ public class UserServer implements UserRest {
     public UserDTO login(LoginDTO loginDTO) {
         return null;
     }
+
+    @Override
+    public Boolean setWallet(Long userId, Integer amount) {
+        return this.userService.setWallet(userId,amount);
+    }
 }

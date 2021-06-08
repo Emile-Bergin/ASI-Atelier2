@@ -7,7 +7,7 @@ public class CardFamilyDTO {
     private String name;
     private String code;
     private String color;
-    private List<CardEntity> card;
+    private List<CardDTO> card;
 
     public CardFamilyDTO() {
     }

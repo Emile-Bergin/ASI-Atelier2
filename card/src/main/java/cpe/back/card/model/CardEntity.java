@@ -1,5 +1,8 @@
 package cpe.back.card.model;
 
+import fr.cpe.Lib.card.model.CardDTO;
+import fr.cpe.Lib.card.model.CardFamilyDTO;
+import fr.cpe.Lib.card.model.CardTypeDTO;
 import fr.cpe.Lib.user.model.UserDTO;
 
 import javax.persistence.*;
@@ -100,5 +103,18 @@ public class CardEntity {
 
     public void setUser(UserDTO user) {
         this.user = user;
+    }
+
+    public CardDTO toDTO() {
+        CardDTO cardDTO = new CardDTO();
+        cardDTO.setId(this.id);
+        cardDTO.setTitle(this.title);
+        cardDTO.setDescription(this.description);
+        cardDTO.setHealthPoint(this.health_point);
+        cardDTO.setPrice(this.price);
+        cardDTO.setType(this.type.toDTO());
+        cardDTO.setFamily(this.family.toDTO());
+
+        return cardDTO;
     }
 }

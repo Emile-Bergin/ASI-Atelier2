@@ -1,5 +1,7 @@
 package cpe.back.card.model;
 
+import fr.cpe.Lib.card.model.CardFamilyDTO;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -48,6 +50,14 @@ public class CardFamilyEntity {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public CardFamilyDTO toDTO() {
+        CardFamilyDTO cardFamilyDTO = new CardFamilyDTO();
+        cardFamilyDTO.setCode(this.code);
+        cardFamilyDTO.setName(this.name);
+        cardFamilyDTO.setColor(this.color);
+        return cardFamilyDTO;
     }
 
 	/*@Override

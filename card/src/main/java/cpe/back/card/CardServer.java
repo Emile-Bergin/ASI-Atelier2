@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CardServer implements CardRest {
@@ -20,17 +21,17 @@ public class CardServer implements CardRest {
 
     @Override
     public List<CardDTO> getCards() {
-        List<CardEntity> list = cardService.getCards();
+        return convertListCardToDTO(cardService.getCards());
     }
 
     @Override
     public List<CardDTO> getSellCards() {
-        return cardService.getSellCards();
+        return convertListCardToDTO(cardService.getSellCards());
     }
 
     @Override
     public List<CardDTO> getUserCards(long cookie) {
-        return cardService.getUserCards(cookie);
+        return convertListCardToDTO(cardService.getUserCards(cookie));
     }
 
     @Override
@@ -41,5 +42,13 @@ public class CardServer implements CardRest {
     @Override
     public Boolean buyCard(UserTransaction transaction) {
         return cardService.buyCard(transaction);
+    }
+
+    private List<CardDTO> convertListCardToDTO(List<CardEntity> list) {
+        List<CardDTO> listDTO = new ArrayList<>();
+        for(CardEntity card : list){
+            listDTO.add(card.toDTO());
+        }
+        return listDTO;
     }
 }

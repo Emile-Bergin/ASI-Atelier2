@@ -1,6 +1,5 @@
 package cpe.back.card;
 
-import com.sp.model.CardEntity;
 import cpe.back.card.model.CardEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

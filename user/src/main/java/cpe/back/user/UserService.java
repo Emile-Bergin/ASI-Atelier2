@@ -26,4 +26,9 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("User inexistant"));
     }
 
+    public boolean setWallet(Long userId, Integer amount) {
+        UserEntity user = userRepository.getById(userId);
+        userRepository.setWallet(user.getId(), user.getWallet()+amount);
+        return true;
+    }
 }
