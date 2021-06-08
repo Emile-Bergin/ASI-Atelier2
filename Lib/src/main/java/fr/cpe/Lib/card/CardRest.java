@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(value = "microservice-user", url = "http://card:8082/")
+@FeignClient(value = "microservice-card", url = "http://card:8082/")
 public interface CardRest {
 
     @GetMapping("/list")

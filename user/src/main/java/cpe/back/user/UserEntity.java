@@ -29,9 +29,6 @@ public class UserEntity {
     @Column(name = "wallet")
     private int wallet;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<CardDTO> card;
-
     public UserEntity() {
 
     }

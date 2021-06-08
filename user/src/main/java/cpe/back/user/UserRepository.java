@@ -18,4 +18,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     @Query(value = "UPDATE customer SET wallet = ?2 WHERE id = ?1", 
     nativeQuery = true)
     void setWallet(Long id, int wallet);
+
+    UserEntity getById(Long userId);
 }

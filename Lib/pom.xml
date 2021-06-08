@@ -7,7 +7,11 @@
     <groupId>fr.cpe</groupId>
     <artifactId>Lib</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <parent>
+        <groupId>fr.cpe</groupId>
+        <artifactId>ASI-Atelier2</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -17,21 +21,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+
 
 
 </project>
