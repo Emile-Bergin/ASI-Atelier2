@@ -4,7 +4,8 @@ import fr.cpe.Lib.card.model.CardDTO;
 
 import java.util.List;
 
-public class UserDTO {
+public class
+UserDTO {
 
     private Long id;
     private String name;
