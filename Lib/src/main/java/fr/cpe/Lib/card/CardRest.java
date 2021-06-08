@@ -1,7 +1,7 @@
-package fr.cpe.Lib.card;
+package fr.cpe.card;
 
-import fr.cpe.Lib.card.model.CardDTO;
-import fr.cpe.Lib.card.model.UserTransaction;
+import fr.cpe.card.model.CardDTO;
+import fr.cpe.card.model.UserTransaction;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;

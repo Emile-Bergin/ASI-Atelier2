@@ -1,9 +1,9 @@
 package cpe.back.card.model;
 
-import fr.cpe.Lib.card.model.CardDTO;
-import fr.cpe.Lib.card.model.CardFamilyDTO;
-import fr.cpe.Lib.card.model.CardTypeDTO;
-import fr.cpe.Lib.user.model.UserDTO;
+import fr.cpe.card.model.CardDTO;
+import fr.cpe.card.model.CardFamilyDTO;
+import fr.cpe.card.model.CardTypeDTO;
+import fr.cpe.user.model.UserDTO;
 
 import javax.persistence.*;
 

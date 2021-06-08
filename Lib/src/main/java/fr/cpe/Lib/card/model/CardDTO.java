@@ -1,6 +1,6 @@
-package fr.cpe.Lib.card.model;
+package fr.cpe.card.model;
 
-import fr.cpe.Lib.user.model.UserDTO;
+import fr.cpe.user.model.UserDTO;
 
 public class CardDTO {
 

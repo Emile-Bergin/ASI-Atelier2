@@ -1,17 +1,15 @@
 package cpe.back.card;
 
 import cpe.back.card.model.CardEntity;
-import fr.cpe.Lib.card.CardRest;
-import fr.cpe.Lib.card.model.CardDTO;
-import fr.cpe.Lib.card.model.UserTransaction;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import fr.cpe.card.CardRest;
+import fr.cpe.card.model.CardDTO;
+import fr.cpe.card.model.UserTransaction;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RestController
 public class CardServer implements CardRest {
     private CardService cardService;
 

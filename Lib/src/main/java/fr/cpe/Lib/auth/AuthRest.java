@@ -1,6 +1,6 @@
-package fr.cpe.Lib.auth;
+package fr.cpe.auth;
 
-import fr.cpe.Lib.user.model.UserDTO;
+import fr.cpe.user.model.UserDTO;
 
 public interface AuthRest {
     UserDTO getUser(long cookie);

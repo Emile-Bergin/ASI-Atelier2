@@ -1,4 +1,4 @@
-package fr.cpe.Lib.auth.model;
+package fr.cpe.auth.model;
 
 public class LoginDTO {
 

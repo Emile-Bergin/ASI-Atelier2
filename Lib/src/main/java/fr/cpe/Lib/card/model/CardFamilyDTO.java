@@ -1,4 +1,4 @@
-package fr.cpe.Lib.card.model;
+package fr.cpe.card.model;
 
 import java.util.List;
 
