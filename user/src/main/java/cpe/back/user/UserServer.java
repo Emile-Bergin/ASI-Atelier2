@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserServer implements UserRest {
     private UserService userService;
+    private UserMapping userMapping;
 
     public UserServer(UserService userService) {
         this.userService = userService;
@@ -16,17 +17,19 @@ public class UserServer implements UserRest {
 
     @Override
     public UserDTO findUserById(long cookie) {
-        return this.userService.getUser(cookie).toDTO();
+        return userMapping.toDTO(this.userService.getUser(cookie));
     }
 
     @Override
     public UserDTO saveUser(UserDTO user) {
-        return null;
+        UserEntity result = this.userService.SaveUser(userMapping.toEntity(user));
+        return userMapping.toDTO(result);
     }
 
     @Override
     public UserDTO login(LoginDTO loginDTO) {
-        return null;
+        UserEntity result = this.userService.login(loginDTO);
+        return userMapping.toDTO(result);
     }
 
     @Override

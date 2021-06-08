@@ -36,17 +36,6 @@ public class UserEntity {
 
     }
 
-    UserDTO toDTO(){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setId(id);
-        userDTO.setName(name);
-        userDTO.setSurname(surname);
-        userDTO.setPassword(password);
-        userDTO.setToken(token);
-        userDTO.setWallet(wallet);
-        return userDTO;
-    }
-
     public UserEntity(long id, String name, String surname, String password, String token, int wallet) {
         super();
         this.id = id;
@@ -65,11 +54,11 @@ public class UserEntity {
         this.name = name;
     }
 
-    public String getsurname() {
+    public String getSurname() {
         return surname;
     }
 
-    public void setsurname(String surname) {
+    public void setSurname(String surname) {
         this.surname = surname;
     }
 
