@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(value = "microservice-user", url = "http://user:8080/")
+@FeignClient(value = "microservice-user", url = "http://user:8085/")
 public interface UserRest {
 
     @GetMapping("/api/user")
