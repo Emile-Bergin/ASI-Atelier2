@@ -1,6 +1,6 @@
 package cpe.back.card.model;
 
-import fr.cpe.Lib.card.model.CardTypeDTO;
+import fr.cpe.card.model.CardTypeDTO;
 
 import javax.persistence.*;
 import java.util.List;

@@ -1,4 +1,4 @@
-package fr.cpe.Lib.card.model;
+package fr.cpe.card.model;
 
 public class UserTransaction {
     private Long idUser;

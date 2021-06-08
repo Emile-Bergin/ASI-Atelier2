@@ -1,9 +1,9 @@
 package cpe.back.card;
 
 import cpe.back.card.model.CardEntity;
-import fr.cpe.Lib.card.model.CardDTO;
-import fr.cpe.Lib.card.model.UserTransaction;
-import fr.cpe.Lib.user.UserRest;
+import fr.cpe.card.model.CardDTO;
+import fr.cpe.card.model.UserTransaction;
+import fr.cpe.user.UserRest;
 import org.springframework.stereotype.Service;
 
 

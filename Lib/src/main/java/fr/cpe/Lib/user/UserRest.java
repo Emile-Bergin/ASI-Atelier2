@@ -1,7 +1,7 @@
-package fr.cpe.Lib.user;
+package fr.cpe.user;
 
-import fr.cpe.Lib.auth.model.LoginDTO;
-import fr.cpe.Lib.user.model.UserDTO;
+import fr.cpe.auth.model.LoginDTO;
+import fr.cpe.user.model.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;

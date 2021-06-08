@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = {"fr.cpe.Lib"})
+@EnableFeignClients(basePackages = {"fr.cpe"})
 public class CardApplication {
 
 	public static void main(String[] args) {

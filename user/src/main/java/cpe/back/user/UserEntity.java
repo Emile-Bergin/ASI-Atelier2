@@ -1,7 +1,7 @@
 package cpe.back.user;
 
-import fr.cpe.Lib.card.model.CardDTO;
-import fr.cpe.Lib.user.model.UserDTO;
+import fr.cpe.card.model.CardDTO;
+import fr.cpe.user.model.UserDTO;
 
 import javax.persistence.*;
 import java.util.List;

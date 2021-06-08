@@ -1,8 +1,8 @@
 package cpe.back.auth;
 
-import fr.cpe.Lib.auth.model.LoginDTO;
-import fr.cpe.Lib.user.UserRest;
-import fr.cpe.Lib.user.model.UserDTO;
+import fr.cpe.auth.model.LoginDTO;
+import fr.cpe.user.UserRest;
+import fr.cpe.user.model.UserDTO;
 import org.springframework.stereotype.Service;
 
 

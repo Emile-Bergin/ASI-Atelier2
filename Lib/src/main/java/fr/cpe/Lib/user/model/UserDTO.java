@@ -1,6 +1,6 @@
-package fr.cpe.Lib.user.model;
+package fr.cpe.user.model;
 
-import fr.cpe.Lib.card.model.CardDTO;
+import fr.cpe.card.model.CardDTO;
 
 import java.util.List;
 

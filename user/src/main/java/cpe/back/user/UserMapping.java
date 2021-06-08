@@ -1,6 +1,6 @@
 package cpe.back.user;
 
-import fr.cpe.Lib.user.model.UserDTO;
+import fr.cpe.user.model.UserDTO;
 
 public class UserMapping {
 

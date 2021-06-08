@@ -1,9 +1,9 @@
 package cpe.back.card;
 
 import cpe.back.card.model.CardEntity;
-import fr.cpe.Lib.card.CardRest;
-import fr.cpe.Lib.card.model.CardDTO;
-import fr.cpe.Lib.card.model.UserTransaction;
+import fr.cpe.card.CardRest;
+import fr.cpe.card.model.CardDTO;
+import fr.cpe.card.model.UserTransaction;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
