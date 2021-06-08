@@ -1,26 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <!-- importer le fichier de style -->
-    <link rel="stylesheet" href="css/style1.css" media="screen" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Pokemon-Explorer</title>
 </head>
-<body>
-<div id="container">
-    <!-- zone de connexion -->
+<body class="bg-gray-50">
+    <div class="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md mt-40">
+        <div class="bg-red-800 w-full h-28 text-white font-semibold rounded-tl-xl rounded-tr-xl pt-8">
+            <div class="font-medium text-3xl text-center">
+                Pokémon Explorer <sup class='text-sm'>©</sup>
+            </div>
+        </div>
+        <div class="py-4 px-8 rounded-xl">
+            <h1 class="font-medium text-2xl mt-3 text-center">Inscription</h1>
+            <div class="my-5 text-sm">
+                <label for="username" class="block text-black">Nom d'utilisateur</label>
+                <input type="text" autofocus id="username" class="rounded-sm px-4 py-3 mt-1 focus:outline-none bg-gray-100 w-full" placeholder="Identifiant" />
+            </div>
+            <div class="my-5 text-sm">
+                <label for="surname" class="block text-black">Pseudo</label>
+                <input type="text" autofocus id="surname" class="rounded-sm px-4 py-3 mt-1 focus:outline-none bg-gray-100 w-full" placeholder="Surnom" />
+            </div>
+            <div class="my-5 text-sm">
+                <label for="password" class="block text-black">Mot de passe</label>
+                <input type="password" id="password" class="rounded-sm px-4 py-3 mt-1 focus:outline-none bg-gray-100 w-full" placeholder="*******" />
+            </div>
 
-    <form id="myForm">
-        <h1>Inscritpion</h1>
+            <button class="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full" onclick="signup()">S'INSCRIRE</button>
 
-        <label><b>Nom d'utilisateur</b></label>
-        <input type="text" id="username" placeholder="Entrer le nom d'utilisateur" name="name" required>
-        <label><b>Surnom</b></label>
-        <input type="text" id="surname" placeholder="Entrer votre surnom" name="surname" required>
-
-        <label><b>Mot de passe</b></label>
-        <input type="password" id="password" placeholder="Entrer le mot de passe" name="password" required>
-    </form>
-    <input type="submit" onclick="signup()">
-</div>
+        </div>
+    </div>
 <script>
     function signup() {
         const form = {
