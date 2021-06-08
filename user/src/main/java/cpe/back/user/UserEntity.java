@@ -1,6 +1,5 @@
 package cpe.back.user;
 
-import fr.cpe.Lib.card.model.CardEntity;
 import fr.cpe.Lib.user.model.UserDTO;
 
 import javax.persistence.*;

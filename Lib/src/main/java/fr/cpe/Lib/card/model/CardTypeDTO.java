@@ -2,14 +2,14 @@ package fr.cpe.Lib.card.model;
 
 import java.util.List;
 
-public class CardFamilyEntity {
+public class CardTypeDTO {
     private long id;
     private String name;
     private String code;
     private String color;
     private List<CardEntity> card;
 
-    public CardFamilyEntity() {
+    public CardTypeDTO() {
     }
 
     public String getName() {
